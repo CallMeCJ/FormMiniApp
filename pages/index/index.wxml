@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
   <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> Get WeChat photo </button>
     <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
@@ -10,10 +10,10 @@
   <view class="container">
     <view bindtap="gotoPage" data-page="line" class="mt20 list-item">Line</view>
     <view bindtap="gotoPage" data-page="scrollline" class="mt20 list-item">ScrollLine</view>
-    <view bindtap="gotoPage" data-page="column" class="list-item">Column</view>
-    <view bindtap="gotoPage" data-page="pie" class="list-item">Pie</view>
-    <view bindtap="gotoPage" data-page="ring" class="list-item">Quota</view>
-    <view bindtap="gotoPage" data-page="area" class="list-item">Area</view>
-    <view bindtap="gotoPage" data-page="radar" class="list-item">Radar</view>
+    <view bindtap="gotoPage" data-page="column" class="mt20 list-item">Daily Active User</view>
+    <view bindtap="gotoPage" data-page="pie" class="mt20 list-item">Survey VS Quiz</view>
+    <view bindtap="gotoPage" data-page="ring" class="mt20 list-item">Quota</view>
+    <view bindtap="gotoPage" data-page="area" class="mt20 list-item">Area</view>
+    <view bindtap="gotoPage" data-page="radar" class="mt20 list-item">Question Type</view>
 </view>
 </view>
