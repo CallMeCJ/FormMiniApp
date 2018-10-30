@@ -3,34 +3,39 @@ var app = getApp();
 var radarChart = null;
 Page({
     data: {
+      categories: ['Choice', 'Rating', 'Date', 'Ranking', 'Likert', 'Text', 'NPS'],
+      categoriesData: [31234, 10025, 20000, 15000, 12200, 30256, 12250],
+      maxValue: 10000,
     },
     touchHandler: function (e) {
         console.log(radarChart.getCurrentDataIndex(e));
     },
     onReady: function (e) {
-        var windowWidth = 320;
+        var windowWidth = 500;
+        var windowHeigh = 200;
         try {
             var res = wx.getSystemInfoSync();
             windowWidth = res.windowWidth;
         } catch (e) {
             console.error('getSystemInfoSync failed!');
         }
+        this.data.maxValue = Math.max(this.data.categoriesData);
 
         radarChart = new wxCharts({
-            canvasId: 'radarCanvas',
-            type: 'radar',
-            categories: ['1', '2', '3', '4', '5', '6'],
-            series: [{
-                name: '成交量1',
-                data: [90, 110, 125, 95, 87, 122]
-            }],
-            width: windowWidth,
-            height: 200,
-            extra: {
-                radar: {
-                    max: 150
-                }
+          canvasId: 'radarCanvas',
+          type: 'radar',
+          categories: this.data.categories,
+          series: [{
+            name: 'Question type preference',
+            data: this.data.categoriesData,
+          }],
+          width: windowWidth,
+          height: windowHeigh,
+          extra: {
+            radar: {
+              max: this.data.maxValue
             }
+          }
         });
     }
 });

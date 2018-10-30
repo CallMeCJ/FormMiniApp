@@ -36,6 +36,7 @@ Page({
         }
       })
     }
+    
   },
   getUserInfo: function(e) {
     console.log(e)
@@ -59,7 +60,7 @@ Page({
     });
   },
 
-  callApi: function(){
+  getOfficeInfo: function(){
     wx.request({
       url: app.globalData.serverPath + '/formapi/api/userInfo/',
       header: {

@@ -1,71 +1,14 @@
 var wxCharts = require('../../../utils/wxcharts.js');
 var app = getApp();
 var columnChart = null;
-var chartData = {
-    main: {
-        title: '总成交量',
-        data: [15, 20, 45, 37],
-        categories: ['2012', '2013', '2014', '2015']
-    },
-    sub: [{
-        title: '2012年度成交量',
-        data: [70, 40, 65, 100, 34, 18],
-        categories: ['1', '2', '3', '4', '5', '6']
-    }, {
-        title: '2013年度成交量',
-        data: [55, 30, 45, 36, 56, 13],
-        categories: ['1', '2', '3', '4', '5', '6']
-    }, {
-        title: '2014年度成交量',
-        data: [76, 45, 32, 74, 54, 35],
-        categories: ['1', '2', '3', '4', '5', '6']                
-    }, {
-        title: '2015年度成交量',
-        data: [76, 54, 23, 12, 45, 65],
-        categories: ['1', '2', '3', '4', '5', '6']
-    }]
-};
+
 Page({
     data: {
-        chartTitle: '总成交量',
-        isMainChartDisplay: true
+      title: 'Daily Active Forms',
+      categoriesDatas: [15, 20, 45, 37, 30, 42, 56, 22, 11, 32, 29, 30, 41, 33],
+      categories: ['10/10', '10/11', '10/12', '10/13', '10/14', '10/15', '10/16', '10/17', '10/18', '10/19', '10/20', '10/21', '10/22', '10/23']
     },
-    backToMainChart: function () {
-        this.setData({
-            chartTitle: chartData.main.title,
-            isMainChartDisplay: true
-        });
-        columnChart.updateData({
-            categories: chartData.main.categories,
-            series: [{
-                name: '成交量',
-                data: chartData.main.data,
-                format: function (val, name) {
-                    return val.toFixed(2) + '万';
-                }
-            }]
-        });
-    },
-    touchHandler: function (e) {
-        var index = columnChart.getCurrentDataIndex(e);
-        if (index > -1 && index < chartData.sub.length && this.data.isMainChartDisplay) {
-            this.setData({
-                chartTitle: chartData.sub[index].title,
-                isMainChartDisplay: false
-            });
-            columnChart.updateData({
-                categories: chartData.sub[index].categories,
-                series: [{
-                    name: '成交量',
-                    data: chartData.sub[index].data,
-                    format: function (val, name) {
-                        return val.toFixed(2) + '万';
-                    }
-                }]
-            });
-
-        }
-    },
+    
     onReady: function (e) {
         var windowWidth = 320;
         try {
@@ -79,19 +22,19 @@ Page({
             canvasId: 'columnCanvas',
             type: 'column',
             animation: true,
-            categories: chartData.main.categories,
+            categories: this.data.categories,
             series: [{
-                name: '成交量',
-                data: chartData.main.data,
+                name: this.data.title,
+                data: this.data.categoriesDatas,
                 format: function (val, name) {
-                    return val.toFixed(2) + '万';
+                    return val.toFixed(2);
                 }
             }],
             yAxis: {
                 format: function (val) {
-                    return val + '万';
+                    return val;
                 },
-                title: 'hello',
+                title: 'Total number',
                 min: 0
             },
             xAxis: {
