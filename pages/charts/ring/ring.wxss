@@ -1,1 +1,8 @@
 /* pages/charts/ring/ring.wxss */
+.canvas {
+  text-align: center;
+}
+.quata-title {
+  text-align: center;
+  font-size: 20px;
+}
