@@ -21,35 +21,11 @@ Page({
             canvasId: 'pieCanvas',
             type: 'pie',
             series: [{
-                name: '成交量1',
-                data: 15,
+                name: 'Survey',
+                data: 40,
             }, {
-                name: '成交量2',
-                data: 35,
-            }, {
-                name: '成交量3',
-                data: 78,
-            }, {
-                name: '成交量4',
-                data: 63,
-            }, {
-                name: '成交量2',
-                data: 35,
-            }, {
-                name: '成交量3',
-                data: 78,
-            }, {
-                name: '成交量4',
-                data: 63,
-            }, {
-                name: '成交量2',
-                data: 35,
-            }, {
-                name: '成交量3',
-                data: 78,
-            }, {
-                name: '成交量3',
-                data: 78,
+                name: 'Quiz',
+                data: 60,
             }],
             width: windowWidth,
             height: 300,

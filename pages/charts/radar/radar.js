@@ -12,7 +12,7 @@ Page({
     },
     onReady: function (e) {
         var windowWidth = 500;
-        var windowHeigh = 200;
+        var windowHeigh = 300;
         try {
             var res = wx.getSystemInfoSync();
             windowWidth = res.windowWidth;
