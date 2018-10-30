@@ -2,21 +2,25 @@ var wxCharts = require('../../../utils/wxcharts.js');
 var app = getApp();
 var ringChart = null;
 Page({
-    data: {
+  data: {
+      percentage: [
+        { name: 'My Forms', data: 73, stroke: false }, 
+        { name: 'Recycle bin', data: 10, stroke: false}, 
+        { name: 'Avaliable', data: 17, stroke: false}
+      ]
     },
     touchHandler: function (e) {
-        console.log(ringChart.getCurrentDataIndex(e));
-    },
-    updateData: function () {
-        ringChart.updateData({
-            title: {
-                name: '80%'
-            },
-            subtitle: {
-                color: '#ff0000'
-            }
-        });
-    },     
+      var index = ringChart.getCurrentDataIndex(e);
+      console.log(this.data.percentage[index].name);
+      ringChart.updateData({
+        title: {
+          name: this.data.percentage[index].data + '%'
+        },
+        subtitle: {
+          name: this.data.percentage[index].name,
+        }
+      });
+    },   
     onReady: function (e) {
         var windowWidth = 320;
         try {
@@ -31,38 +35,22 @@ Page({
             canvasId: 'ringCanvas',
             type: 'ring',
             extra: {
-                ringWidth: 25,
+                ringWidth: 20,
                 pie: {
                     offsetAngle: -45
                 }
             },
             title: {
-                name: '70%',
-                color: '#7cb5ec',
+                name: this.data.percentage[0].data + '%',
+                color: '#FF6600',
                 fontSize: 25
             },
             subtitle: {
-                name: '收益率',
+                name: this.data.percentage[0].name,
                 color: '#666666',
                 fontSize: 15
             },
-            series: [{
-                name: '成交量1',
-                data: 15,
-                stroke: false
-            }, {
-                name: '成交量2',
-                data: 35,
-                 stroke: false
-            }, {
-                name: '成交量3',
-                data: 78,
-                stroke: false
-            }, {
-                name: '成交量4',
-                data: 63,
-                 stroke: false
-            }],
+            series: this.data.percentage,
             disablePieStroke: true,
             width: windowWidth,
             height: 200,
