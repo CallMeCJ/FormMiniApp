@@ -1,25 +1,13 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+var SERVER_PATH="https://forms.office-int.com"
 Page({
   data: {
-    motto: 'Hello World3',
+    motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
-  },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  }, 
-  gotoPage: function (e) {
-    var page = e.currentTarget.dataset.page;
-    wx.navigateTo({
-      url: '../charts/' + page + '/' + page
-    });
   },
   onLoad: function () {
     if (app.globalData.userInfo) {
@@ -55,6 +43,30 @@ Page({
     this.setData({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
+    })
+  },
+
+  //事件处理函数
+  bindViewTap: function () {
+    wx.navigateTo({
+      url: '../logs/logs'
+    })
+  },
+  gotoPage: function (e) {
+    var page = e.currentTarget.dataset.page;
+    wx.navigateTo({
+      url: '../charts/' + page + '/' + page
+    });
+  },
+
+  callApi: function(){
+    wx.request({
+      url: SERVER_PATH + '/formapi/api/userInfo/',
+      header: {
+      },
+      success: function(res){
+        console.log(res);
+      }
     })
   }
 })

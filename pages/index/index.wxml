@@ -17,6 +17,6 @@
     <view bindtap="gotoPage" data-page="radar" class="list-item">Radar</view>
 </view>
   <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+    <button type='primary' bindtap='callApi'>{{motto}}</button>
   </view>
 </view>
