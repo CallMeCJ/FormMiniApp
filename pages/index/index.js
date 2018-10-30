@@ -14,6 +14,12 @@ Page({
     wx.navigateTo({
       url: '../logs/logs'
     })
+  }, 
+  gotoPage: function (e) {
+    var page = e.currentTarget.dataset.page;
+    wx.navigateTo({
+      url: '../charts/' + page + '/' + page
+    });
   },
   onLoad: function () {
     if (app.globalData.userInfo) {
