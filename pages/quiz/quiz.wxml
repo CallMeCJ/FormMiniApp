@@ -1,0 +1,6 @@
+<view class="container">
+    <canvas canvas-id="averageScoreCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchAverageHandler"></canvas>
+    <canvas canvas-id="mathModulsRadar" class="canvas" style="height:300px"></canvas>
+    <canvas canvas-id="jackAverageScoreLine" disable-scroll="true" class="canvas"></canvas>
+    <canvas canvas-id="roseAverageScoreLine" disable-scroll="true" class="canvas"></canvas>
+</view>
