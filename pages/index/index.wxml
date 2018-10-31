@@ -6,6 +6,11 @@
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
+    <view class='content'>
+      <block wx:for="{{labArr}}" wx:key="key" wx:for-index="key" wx:for-item="v">
+          <view class='lab' data-key="{{key}}" style="background-color:{{randomColorArr[key]}}">{{v}}</view>
+      </block>
+    </view>
   </view>
   <view class="container">
     <view class='quata-title'>Capacity</view>

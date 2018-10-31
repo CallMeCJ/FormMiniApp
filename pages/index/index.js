@@ -28,10 +28,17 @@ Page({
       categoriesDatas: [15, 20, 45, 37, 30, 42, 56, 22, 11, 32, 29, 30, 41, 33],
       categories: ['10/10', '10/11', '10/12', '10/13', '10/14', '10/15', '10/16', '10/17', '10/18', '10/19', '10/20', '10/21', '10/22', '10/23']
     },
-    FormType:{
-      
-    }
-  },
+    //标签云
+    labArr: ['Form重度使用者', '辛勤的园丁', '深夜工作者'],
+    // 自定义自己喜欢的颜色
+    colorArr: ["#EE2C2C", "#ff7070", "#EEC900", "#4876FF", "#ff6100",
+      "#7DC67D", "#E17572", "#7898AA", "#C35CFF", "#33BCBA", "#C28F5C",
+      "#FF8533", "#6E6E6E", "#428BCA", "#5cb85c", "#FF674F", "#E9967A",
+      "#66CDAA", "#00CED1", "#9F79EE", "#CD3333", "#FFC125", "#32CD32",
+      "#00BFFF", "#68A2D5", "#FF69B4", "#DB7093", "#CD3278", "#607B8B"],
+    // 存储随机颜色
+    randomColorArr: []
+    },
   onLoad: function (e) {
     if (app.globalData.userInfo) {
       this.setData({
@@ -64,6 +71,25 @@ Page({
     this.onLoadFormType(e);
     this.onLoadQuestionType(e);
     this.onLoadDAF(e);
+    this.onLoadTag(e);
+  },
+
+  onLoadTag(e){
+    let that = this,
+      labLen = that.data.labArr.length,
+      colorArr = that.data.colorArr,
+      colorLen = colorArr.length,
+      randomColorArr = [];
+    //判断执行
+    do {
+      let random = colorArr[Math.floor(Math.random() * colorLen)];
+      randomColorArr.push(random);
+      labLen--;
+    } while (labLen > 0)
+
+    that.setData({
+      randomColorArr: randomColorArr
+    });
   },
 
   onLoadCapacity: function(e){
