@@ -13,29 +13,29 @@
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Form Center",
+    "navigationBarBackgroundColor": "#008272",
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
+    "selectedColor": "#008272",
     "list": [
       {
         "pagePath": "pages/index/index",
         "text": "报告",
-        "iconPath": "images/icon_speed.png",
-        "selectedIconPath": "images/icon_speed_HL.png"
+        "iconPath": "images/report.png",
+        "selectedIconPath": "images/report_HL.png"
       },
       {
         "pagePath": "pages/survey/survey",
         "text": "创意Survey",
-        "iconPath": "images/icon_seo.png",
-        "selectedIconPath": "images/icon_seo_HL.png"
+        "iconPath": "images/ideas.png",
+        "selectedIconPath": "images/ideas_HL.png"
       },
       {
         "pagePath": "pages/quiz/quiz",
         "text": "创意Quiz",
-        "iconPath": "images/icon_seo.png",
-        "selectedIconPath": "images/icon_seo_HL.png"
+        "iconPath": "images/ideas.png",
+        "selectedIconPath": "images/ideas_HL.png"
       }
     ]
   }
