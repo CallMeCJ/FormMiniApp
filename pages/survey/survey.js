@@ -21,6 +21,15 @@ Page({
         { name: '完成度0.1', data: 2, stroke: false },
         { name: '完成度0', data: 2, stroke: false }
       ]
+    },
+    ResponseData:{
+      categories: ['星期一', '星期二', '星期三', '星期四', '星期五'],
+      data: [9, 8, 10, 13, 12], 
+      data2: [5, 4, 3, 5, 6]
+    },
+    DropData:{
+      categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+      data: [192, 180, 170, 80, 76, 76, 76, 76, 73, 73]
     }
   },
 
@@ -92,8 +101,8 @@ Page({
   },
 
   createRespondData: function () {
-    var categories = ['星期一', '星期二', '星期三', '星期四', '星期五'];
-    var data = [9, 8, 10, 13, 12];    
+    var categories =this.data.ResponseData.categories;
+    var data = this.data.ResponseData.data;    
     return {
       categories: categories,
       data: data
@@ -121,7 +130,7 @@ Page({
         data: simulationData.data
       }, {
         name: '下午',
-        data: [5, 4, 3, 5, 6]
+          data: this.data.ResponseData.data2
       }],
       xAxis: {
         disableGrid: true
@@ -162,11 +171,11 @@ Page({
     areaChart = new wxCharts({
       canvasId: 'areaCanvas',
       type: 'area',
-      categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+      categories: this.data.DropData.categories,
       animation: true,
       series: [{
         name: '回答量',
-        data: [192, 180, 170, 80, 76, 76, 76, 76, 73, 73]
+        data: this.data.DropData.data
       }],
       yAxis: {
         title: '回答数量',
