@@ -136,7 +136,7 @@ Page({
         disableGrid: true
       },
       yAxis: {
-        title: '相应时间（分）',
+        title: '响应时间（分）',
         min: 0
       },
       width: windowWidth,

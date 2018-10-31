@@ -13,6 +13,20 @@
     </view>
   </view>
   <view class="container">
+    <view class='text-container-form-quiz'>
+      <view class='text-content-form'>
+        <view class='count'>32</view>
+        <view class='type'>Form</view>
+      </view>    
+      <view class='text-content-quiz'>
+        <view class='count'>215</view>
+        <view class='type'>Quiz</view>
+      </view>
+    </view>
+    <view class='text-content-response'>
+      <view class='count'>4989</view>
+      <view class='type'>Response</view>
+    </view>
     <view class='quata-title'>Capacity</view>
     <canvas canvas-id="ringCanvas" class="canvas" style="height:300px" bindtouchstart="capacityTouchHandler"></canvas>
     <view class='quata-title'>Survey VS Quiz</view>
