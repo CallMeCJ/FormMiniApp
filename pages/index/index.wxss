@@ -28,3 +28,10 @@
     line-height: 60rpx;
     text-indent: 30rpx;
 }
+.canvas {
+  text-align: center;
+}
+.quata-title {
+  text-align: center;
+  font-size: 20px;
+}

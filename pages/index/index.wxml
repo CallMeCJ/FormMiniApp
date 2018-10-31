@@ -8,6 +8,17 @@
     </block>
   </view>
   <view class="container">
+    <view class='quata-title'>Capacity</view>
+    <canvas canvas-id="ringCanvas" class="canvas" style="height:300px" bindtouchstart="capacityTouchHandler"></canvas>
+    <view class='quata-title'>Survey VS Quiz</view>
+    <canvas canvas-id="pieCanvas" class="canvas" style="height:300px"></canvas>
+    <view class='quata-title'>Question Distribution</view>
+    <canvas canvas-id="radarCanvas" class="canvas" style="height:300px"></canvas>
+    <view class='quata-title'>Daily Active Form</view>
+    <canvas canvas-id="columnCanvas" class="canvas" style="height:300px"></canvas>
+  </view>
+
+  <view class="container">
     <view bindtap="gotoPage" data-page="line" class="mt20 list-item">Line</view>
     <view bindtap="gotoPage" data-page="scrollline" class="mt20 list-item">ScrollLine</view>
     <view bindtap="gotoPage" data-page="column" class="mt20 list-item">Daily Active User</view>
@@ -15,5 +26,5 @@
     <view bindtap="gotoPage" data-page="ring" class="mt20 list-item">Quota</view>
     <view bindtap="gotoPage" data-page="area" class="mt20 list-item">Area</view>
     <view bindtap="gotoPage" data-page="radar" class="mt20 list-item">Question Type</view>
-</view>
+  </view>
 </view>
