@@ -36,3 +36,29 @@
   font-size: 20px;
   margin-top: 20px;
 }
+.text-container-form-quiz {
+  display: flex;
+}
+.text-content-form {
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  margin-left: 120px;
+}
+.text-content-quiz {
+  flex: 1;
+  display: block;
+  text-align: center;
+  margin: 0, 20px;
+}
+.text-content-response{
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+.count {
+  font-weight: bolder;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
