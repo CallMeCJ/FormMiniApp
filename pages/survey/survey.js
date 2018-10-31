@@ -140,7 +140,7 @@ Page({
     });
   }, 
   
-  RespondtouchHandler: function (e) {
+  respondTouchHandler: function (e) {
     console.log(lineChart.getCurrentDataIndex(e));
     lineChart.showToolTip(e, {
       // background: '#7cb5ec',
@@ -186,5 +186,10 @@ Page({
       width: windowWidth,
       height: 200
     });
-  }
+  },
+
+  dropTouchHandler: function (e) {
+    console.log(areaChart.getCurrentDataIndex(e));
+    areaChart.showToolTip(e);
+  },  
 })
