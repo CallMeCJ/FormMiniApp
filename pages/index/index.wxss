@@ -40,12 +40,13 @@
 .lab{ padding: 4rpx 10rpx; margin: 20rpx; border-radius: 4rpx; float: left; color: #fff; font-size: 28rpx;}
 .text-container-form-quiz {
   display: flex;
+  margin-top: 30px;
+  font-size: 30px;
 }
 .text-content-form {
   display: block;
   text-align: center;
-  font-size: 20px;
-  margin-left: 120px;
+  margin-left: 100px;
 }
 .text-content-quiz {
   flex: 1;
@@ -57,10 +58,25 @@
   text-align: center;
   margin-top: 20px;
   margin-bottom: 10px;
-  margin-left: 10px;
+  margin-left: 20px;
+  font-size: 30px;
 }
 .count {
   font-weight: bolder;
   margin-bottom: 10px;
   margin-top: 10px;
+}
+.type {
+  font-size: 25px;
+}
+.text-content-reward {
+  text-align: center;
+  color: white;
+  background: #008272;
+  margin: 25px 25px 0;
+  height: 60px;
+}
+.reward {
+  font-weight: bolder;
+  margin: 19px 0;
 }
