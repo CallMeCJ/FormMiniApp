@@ -1,6 +1,9 @@
 <view class="container">
     <canvas canvas-id="averageScoreCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchAverageHandler"></canvas>
+    <view class='quata-content'>2017-12：这题也太难了吧！要全军覆没啦，我们还是小学生啊！</view>
+    <view class='quata-content'>2018-03：这题也太多了吧！会做但是做不完啊！我们还是小学生啊！</view>
     <canvas canvas-id="mathModulsRadar" class="canvas" style="height:300px"></canvas>
-    <canvas canvas-id="jackAverageScoreLine" disable-scroll="true" class="canvas"></canvas>
-    <canvas canvas-id="roseAverageScoreLine" disable-scroll="true" class="canvas"></canvas>
+    <view class='quata-content'>多花点时间在空间与图形上，小学生只是小学生!</view>
+    <canvas canvas-id="rankingCanvas" disable-scroll="true" class="canvas" bindtouchstart='touchRankingHandler'></canvas>
+    <view class='quata-content'>2018-04：亡羊补牢，为时未晚！适当的comment很重要！小学生还是Too Young too simple!</view>
 </view>
