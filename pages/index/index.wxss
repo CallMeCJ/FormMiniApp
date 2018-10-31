@@ -73,7 +73,7 @@
   text-align: center;
   color: white;
   background: #008272;
-  margin: 25px 25px 0;
+  margin: 25px;
   height: 60px;
 }
 .reward {
