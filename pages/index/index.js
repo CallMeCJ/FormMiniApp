@@ -114,15 +114,17 @@ Page({
 
   capacityTouchHandler: function (e) {
     var index = ringChart.getCurrentDataIndex(e);
-    console.log(this.data.quota.percentage[index].name);
-    ringChart.updateData({
-      title: {
-        name: this.data.quota.percentage[index].data + '%'
-      },
-      subtitle: {
-        name: this.data.quota.percentage[index].name,
-      }
-    });
+    if(this.data.quota.percentage[index]){
+      console.log(this.data.quota.percentage[index].name);
+      ringChart.updateData({
+        title: {
+          name: this.data.quota.percentage[index].data + '%'
+        },
+        subtitle: {
+          name: this.data.quota.percentage[index].name,
+        }
+      });
+    }
   },
 
   //加载Form和Quiz的对比

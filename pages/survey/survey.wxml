@@ -1,8 +1,11 @@
 <!--logs.wxml-->
 <view class="container">
     <view class='quata-title'>调查问卷完成度</view>
-    <canvas canvas-id="ringCanvas" class="canvas" style="height:260px" bindtouchstart="capacityTouchHandler"></canvas>
+    <canvas canvas-id="ringCanvas" class="canvas" style="height:260px" bindtouchstart="finisheRateTouchHandler"></canvas>
     <view class='quata-title'>调查问卷响应度</view>
-    <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
-    <view class='quata-content'>建议：您可选择每周三下午发放问卷，响应度更好哦！</view>
+    <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="RespondtouchHandler"></canvas>
+    <view class='quata-content'>建议：您可选择每周三下午发放问卷，响应度更好哦！</view>    
+    <view class='quata-title'>流量丢失的调查问卷：测试你的性格</view>
+    <canvas canvas-id="areaCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
+    <view class='quata-content'>建议：似乎很多人在回答第四题的时候离开了，亲可以换个问题类型试试哦，Likert似乎更合适呢！</view>  
 </view>

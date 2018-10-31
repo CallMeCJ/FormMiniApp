@@ -1,11 +1,9 @@
 //logs.js
 const util = require('../../utils/util.js')
 const wxCharts = require('../../utils/wxcharts.js');
-var pieChart = null;
 var ringChart = null;
-var radarChart = null;
-var columnChart = null;
 var lineChart = null;
+var areaChart = null;
 
 Page({
   data: {
@@ -27,11 +25,12 @@ Page({
   },
 
   onLoad: function (e) {
-    this.onLoadCapacity(e);
+    this.onLoadFinishRate(e);
     this.onLoadRespond(e);
+    this.onLoadDrop(e);
   },
 
-  onLoadCapacity: function (e) {
+  onLoadFinishRate: function (e) {
     var windowWidth = 520;
     try {
       var res = wx.getSystemInfoSync();
@@ -50,16 +49,16 @@ Page({
           offsetAngle: 0
         }
       },
-      // title: {
-      //   name: this.data.FinishRate.percentage[0].data + '%',
-      //   color: '#FF6600',
-      //   fontSize: 25
-      // },
-      // subtitle: {
-      //   name: this.data.FinishRate.percentage[0].name,
-      //   color: '#666666',
-      //   fontSize: 15
-      // },
+      title: {
+        name: this.data.FinishRate.percentage[4].data + '%',
+        color: '#FF6600',
+        fontSize: 15
+      },
+      subtitle: {
+        name: this.data.FinishRate.percentage[4].name,
+        color: '#666666',
+        fontSize: 10
+      },
       series: this.data.FinishRate.percentage,
       disablePieStroke: true,
       width: windowWidth,
@@ -77,17 +76,19 @@ Page({
     }, 500);
   }, 
   
-  capacityTouchHandler: function (e) {
+  finisheRateTouchHandler: function (e) {
     var index = ringChart.getCurrentDataIndex(e);
-    console.log(this.data.FinishRate.percentage[index].name);
-    ringChart.updateData({
-      title: {
-        name: this.data.FinishRate.percentage[index].data + '%'
-      },
-      subtitle: {
-        name: this.data.FinishRate.percentage[index].name,
-      }
-    });
+    if(this.data.FinishRate.percentage[index]){
+      console.log(this.data.FinishRate.percentage[index].name);
+      ringChart.updateData({
+        title: {
+          name: this.data.FinishRate.percentage[index].data + '%'
+        },
+        subtitle: {
+          name: this.data.FinishRate.percentage[index].name,
+        }
+      });
+    }
   },
 
   createRespondData: function () {
@@ -136,6 +137,54 @@ Page({
       extra: {
         lineStyle: 'curve'
       }
+    });
+  }, 
+  
+  RespondtouchHandler: function (e) {
+    console.log(lineChart.getCurrentDataIndex(e));
+    lineChart.showToolTip(e, {
+      // background: '#7cb5ec',
+      format: function (item, category) {
+        return category + ' ' + item.name + ':' + item.data
+      }
+    });
+  },  
+
+  onLoadDrop: function (e) {
+    var windowWidth = 320;
+    try {
+      var res = wx.getSystemInfoSync();
+      windowWidth = res.windowWidth;
+    } catch (e) {
+      console.error('getSystemInfoSync failed!');
+    }
+
+    areaChart = new wxCharts({
+      canvasId: 'areaCanvas',
+      type: 'area',
+      categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'],
+      animation: true,
+      series: [{
+        name: '回答量',
+        data: [192, 180, 170, 80, 76, 76, 76, 76, 73, 73]
+      }],
+      yAxis: {
+        title: '回答数量',
+        min: 0,
+        fontColor: '#8085e9',
+        gridColor: '#8085e9',
+        titleFontColor: '#f7a35c'
+      },
+      xAxis: {
+        title: '题目编号',
+        fontColor: '#7cb5ec',
+        gridColor: '#7cb5ec'
+      },
+      extra: {
+        legendTextColor: '#cb2431'
+      },
+      width: windowWidth,
+      height: 200
     });
   }
 })
