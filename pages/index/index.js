@@ -20,25 +20,17 @@ Page({
       ]
     },
     questionType:{
-      categories: ['Choice', 'Rating', 'Date', 'Ranking', 'Likert', 'Text', 'NPS'],
+      categories: ['选择', '评分', '日期', '排序', '里克特量表', '文本', 'NPS'],
       categoriesData: [31234, 10025, 20000, 15000, 12200, 30256, 12250],
       maxValue: 10000,
     },
     dailyActiveForm:{
-      categoriesDatas: [15, 20, 45, 37, 30, 42, 56, 22, 11, 32, 29, 30, 41, 33],
-      categories: ['10/10', '10/11', '10/12', '10/13', '10/14', '10/15', '10/16', '10/17', '10/18', '10/19', '10/20', '10/21', '10/22', '10/23']
+      categoriesDatas: [1, 2, 15, 17, 18, 20, 16, 3, 2, 20, 17, 18, 20, 19],
+      categories: ['10/13', '10/14', '10/15', '10/16', '10/17', '10/18', '10/19', '10/20', '10/21', '10/22', '10/23', '10/24', '10/25', '10/26']
     },
     //标签云
-    labArr: ['Form重度使用者', '辛勤的园丁', '深夜工作者'],
-    // 自定义自己喜欢的颜色
-    colorArr: ["#EE2C2C", "#ff7070", "#EEC900", "#4876FF", "#ff6100",
-      "#7DC67D", "#E17572", "#7898AA", "#C35CFF", "#33BCBA", "#C28F5C",
-      "#FF8533", "#6E6E6E", "#428BCA", "#5cb85c", "#FF674F", "#E9967A",
-      "#66CDAA", "#00CED1", "#9F79EE", "#CD3333", "#FFC125", "#32CD32",
-      "#00BFFF", "#68A2D5", "#FF69B4", "#DB7093", "#CD3278", "#607B8B"],
-    // 存储随机颜色
-    randomColorArr: []
-    },
+    labArr: ['辛勤的园丁', '表单重度患者', '偏执狂', '加班使我快乐'],
+  },
   onLoad: function (e) {
     if (app.globalData.userInfo) {
       this.setData({
@@ -67,8 +59,8 @@ Page({
       })
     }
 
-    this.onLoadCapacity(e);
-    this.onLoadFormType(e);
+    // this.onLoadCapacity(e);
+    // this.onLoadFormType(e);
     this.onLoadQuestionType(e);
     this.onLoadDAF(e);
     this.onLoadTag(e);
@@ -196,7 +188,7 @@ Page({
       type: 'radar',
       categories: this.data.questionType.categories,
       series: [{
-        name: 'Question type preference',
+        name: '问题类型偏好',
         data: this.data.questionType.categoriesData,
       }],
       width: windowWidth,
@@ -223,11 +215,11 @@ Page({
       animation: true,
       categories: this.data.dailyActiveForm.categories,
       series: [{
-        name: 'DAF',
+        name: '日编辑表单量',
         data: this.data.dailyActiveForm.categoriesDatas,
       }],
       yAxis: {
-        title: 'Total number',
+        title: '总量',
         min: 0
       },
       xAxis: {
