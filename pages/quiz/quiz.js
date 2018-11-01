@@ -10,13 +10,13 @@ Page({
   data: {
     averageScore: {
       mathModuls: ['数的运算', '初步代数', '应用题', '量的计算', '空间与图形', '统计与概率'],
-      mathModulsScore: [95, 90, 80, 83, 70, 85],
+      mathModulsScore: [95, 90, 50, 83, 30, 70],
       timeCategories: ['2017-09', '2017-10', '2017-11', '2017-12', '2018-01', '2018-02', '2018-03', '2018-04', '2018-05', '2018-06'],
       averageScoresOfMath: [80.3, 81.4, 84.2, 70.1, 84.8, 86.6, 74.2, 85.9, 87.6, 87.8],
       averageScoresOfEnglish: [70.1, 73.3, 75.5, 79.4, 80.2, 81.8, 83.6, 85.0, 84.7, 85.6],
-      jackRanking: [2, 3, 2, 10, 20, 25, 26, 30, 15, 7],
-      roseRanking: [5, 4, 5, 20, 25, 27, 28, 29, 16, 6],
-      comments: [1, 2, 1, 1, 1, 5, 10, 20, 30, 30],
+      jackScore: [90.3, 89.6, 94.8, 80.6, 75.4, 70.6, 68.0, 68.9, 67, 67.8],
+      roseScore: [85.3, 83.6, 89.8, 75.6, 73.4, 65.6, 64.0, 64.9, 63, 63.8],
+      standard: [80.5, 80.1, 83.1, 83.0, 84.2, 84.8, 85, 85.1, 86, 85.7],
     }
   },
   onLoad: function (e) {
@@ -69,21 +69,21 @@ Page({
       animation: true,
       background: '#f5f5f5',
       series: [{
-        name: '梁山伯',
-        data: this.data.averageScore.jackRanking
+        name: '梁山伯平均分',
+        data: this.data.averageScore.jackScore
       }, {
-        name: '朱丽叶',
-        data: this.data.averageScore.roseRanking
+        name: '朱丽叶平均分',
+        data: this.data.averageScore.roseScore
       }, {
-        name: 'comments数',
-        data: this.data.averageScore.comments
+        name: '班级平均分',
+        data: this.data.averageScore.standard
       }],
       xAxis: {
         disableGrid: true
       },
       yAxis: {
-        title: '班级排名(35人)',
-        min: 50
+        title: '平均分（百分制）',
+        min: 60
       },
       width: windowWidth,
       height: 200,
