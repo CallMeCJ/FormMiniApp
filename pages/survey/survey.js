@@ -1,26 +1,14 @@
 //logs.js
 const util = require('../../utils/util.js')
 const wxCharts = require('../../utils/wxcharts.js');
-var ringChart = null;
 var lineChart = null;
 var areaChart = null;
 
 Page({
   data: {
     FinishRate: {
-      percentage: [
-        { name: '完成度1', data: 2, stroke: false },
-        { name: '完成度0.9', data: 6, stroke: false },
-        { name: '完成度0.8', data: 8, stroke: false },
-        { name: '完成度0.7', data: 11, stroke: false },
-        { name: '完成度0.6', data: 31, stroke: false },
-        { name: '完成度0.5', data: 16, stroke: false },
-        { name: '完成度0.4', data: 10, stroke: false },
-        { name: '完成度0.3', data: 7, stroke: false },
-        { name: '完成度0.2', data: 5, stroke: false },
-        { name: '完成度0.1', data: 2, stroke: false },
-        { name: '完成度0', data: 2, stroke: false }
-      ]
+      categories: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
+      data: [10, 20, 30, 15, 10, 5, 4, 3, 2, 1],
     },
     ResponseData:{
       categories: ['星期一', '星期二', '星期三', '星期四', '星期五'],
@@ -34,13 +22,13 @@ Page({
   },
 
   onLoad: function (e) {
-    this.onLoadFinishRate(e);
+    this.onLoadFinishedRate(e);
     this.onLoadRespond(e);
     this.onLoadDrop(e);
   },
 
-  onLoadFinishRate: function (e) {
-    var windowWidth = 520;
+  onLoadFinishedRate: function (e) {
+    var windowWidth = 320;
     try {
       var res = wx.getSystemInfoSync();
       windowWidth = res.windowWidth;
@@ -48,56 +36,25 @@ Page({
       console.error('getSystemInfoSync failed!');
     }
 
-    ringChart = new wxCharts({
+    new wxCharts({
+      canvasId: 'finishRateCanvas',
+      type: 'line',
+      categories: this.data.FinishRate.categories,
       animation: true,
-      canvasId: 'ringCanvas',
-      type: 'ring',
-      extra: {
-        ringWidth: 10,
-        pie: {
-          offsetAngle: 0
-        }
+      series: [{
+        name: '问卷题目回答率',
+        data: this.data.FinishRate.data
+      }],
+      yAxis: {
+        title: '回答人数比例（100%）',
+        min: 0,
       },
-      title: {
-        name: this.data.FinishRate.percentage[4].data + '%',
-        color: '#FF6600',
-        fontSize: 15
+      xAxis: {
+        disableGrid: true
       },
-      subtitle: {
-        name: this.data.FinishRate.percentage[4].name,
-        color: '#666666',
-        fontSize: 10
-      },
-      series: this.data.FinishRate.percentage,
-      disablePieStroke: true,
       width: windowWidth,
-      height: 250,
-      dataLabel: true,
-      legend: true,
-      background: '#f5f5f5',
-      padding: 0
+      height: 200
     });
-    ringChart.addEventListener('renderComplete', () => {
-      console.log('renderComplete');
-    });
-    setTimeout(() => {
-      ringChart.stopAnimation();
-    }, 500);
-  }, 
-  
-  finisheRateTouchHandler: function (e) {
-    var index = ringChart.getCurrentDataIndex(e);
-    if(this.data.FinishRate.percentage[index]){
-      console.log(this.data.FinishRate.percentage[index].name);
-      ringChart.updateData({
-        title: {
-          name: this.data.FinishRate.percentage[index].data + '%'
-        },
-        subtitle: {
-          name: this.data.FinishRate.percentage[index].name,
-        }
-      });
-    }
   },
 
   createRespondData: function () {
@@ -124,7 +81,6 @@ Page({
       type: 'line',
       categories: simulationData.categories,
       animation: true,
-      // background: '#f5f5f5',
       series: [{
         name: '上午',
         data: simulationData.data
@@ -180,23 +136,15 @@ Page({
       yAxis: {
         title: '回答数量',
         min: 0,
-        fontColor: '#8085e9',
-        gridColor: '#8085e9',
-        titleFontColor: '#f7a35c'
       },
       xAxis: {
-        title: '题目编号',
-        fontColor: '#7cb5ec',
-        gridColor: '#7cb5ec'
-      },
-      extra: {
-        legendTextColor: '#cb2431'
+        title: '题目回答率（100%）'
       },
       width: windowWidth,
       height: 200
     });
   },
-
+  
   dropTouchHandler: function (e) {
     console.log(areaChart.getCurrentDataIndex(e));
     areaChart.showToolTip(e);

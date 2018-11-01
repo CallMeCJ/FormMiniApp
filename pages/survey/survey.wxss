@@ -3,3 +3,15 @@
   font-size: 20px;
   margin-top: 20px;
 }
+
+.finishRate{
+   margin: 30px 0 30px;
+}
+
+.responseTime{
+   margin: 30px 0 30px;
+}
+
+.responseCount{
+  margin: 30px 0 30px;
+}

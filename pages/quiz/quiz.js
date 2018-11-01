@@ -1,7 +1,7 @@
 //logs.js
 const util = require('../../utils/util.js')
 const wxCharts = require('../../utils/wxcharts.js');
-var totalAverageScore = null;
+var classQuizColumn = null;
 var mathSubjectsScore = null;
 var jackAndRoseRanking = null;
 var app = getApp();
@@ -19,9 +19,9 @@ Page({
     }
   },
   onLoad: function (e) {
-    this.onLoadAverageScore(e);
-    this.onLoadJackAndRoseRanking(e);
+    this.onLoadClassQuiz(e);
     this.onLoadMathModulsScore(e);
+    this.onLoadJackAndRoseRanking(e);
   },
 
   onLoadMathModulsScore(e){
@@ -94,7 +94,7 @@ Page({
     });
   },
 
-  onLoadAverageScore(e){
+  onLoadClassQuiz(e){
     var windowWidth = 320;
     try {
       var res = wx.getSystemInfoSync();
@@ -103,12 +103,11 @@ Page({
       console.error('getSystemInfoSync failed!');
     }
 
-    totalAverageScore = new wxCharts({
+    classQuizColumn = new wxCharts({
       canvasId: 'averageScoreCanvas',
-      type: 'line',
-      categories: this.data.averageScore.timeCategories,
+      type: 'column',
       animation: true,
-      background: '#f5f5f5',
+      categories: this.data.averageScore.timeCategories,
       series: [{
         name: '2018/10/25 随堂测验--初步代数',
         data: this.data.averageScore.averageScoresOfMath,
@@ -120,23 +119,18 @@ Page({
         title: '问题回答数量',
         min: 50
       },
+      extra: {
+        column: {
+          width: 15
+        }
+      },
       width: windowWidth,
       height: 200,
       dataLabel: true,
       dataPointShape: true,
-      extra: {
-        lineStyle: 'curve'
-      }
     });
   },
 
-  touchAverageHandler: function (e) {
-    totalAverageScore.showToolTip(e, {
-      format: function (item, category) {
-        return category + ' ' + item.name + ':' + item.data
-      }
-    });
-  },
   touchRankingHandler: function (e) {
     jackAndRoseRanking.showToolTip(e, {
       format: function (item, category) {
