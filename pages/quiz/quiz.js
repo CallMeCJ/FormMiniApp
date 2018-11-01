@@ -11,9 +11,8 @@ Page({
     averageScore: {
       mathModuls: ['数的运算', '初步代数', '应用题', '量的计算', '空间与图形', '统计与概率'],
       mathModulsScore: [95, 90, 50, 83, 30, 70],
-      timeCategories: ['2017-09', '2017-10', '2017-11', '2017-12', '2018-01', '2018-02', '2018-03', '2018-04', '2018-05', '2018-06'],
-      averageScoresOfMath: [80.3, 81.4, 84.2, 70.1, 84.8, 86.6, 74.2, 85.9, 87.6, 87.8],
-      averageScoresOfEnglish: [70.1, 73.3, 75.5, 79.4, 80.2, 81.8, 83.6, 85.0, 84.7, 85.6],
+      timeCategories: ['Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6', 'Q7', 'Q8', 'Q9', 'Q10'],
+      averageScoresOfMath: [25, 25, 25, 25, 25, 25, 24, 20, 5, 2],
       jackScore: [90.3, 89.6, 94.8, 80.6, 75.4, 70.6, 68.0, 68.9, 67, 67.8],
       roseScore: [85.3, 83.6, 89.8, 75.6, 73.4, 65.6, 64.0, 64.9, 63, 63.8],
       standard: [80.5, 80.1, 83.1, 83.0, 84.2, 84.8, 85, 85.1, 86, 85.7],
@@ -111,31 +110,19 @@ Page({
       animation: true,
       background: '#f5f5f5',
       series: [{
-        name: '数学',
+        name: '2018/10/25 随堂测验--初步代数',
         data: this.data.averageScore.averageScoresOfMath,
-        format: function (val, name) {
-          return val.toFixed(2) + '分';
-        }
-      }, {
-        name: '英语',
-        data: this.data.averageScore.averageScoresOfEnglish,
-        format: function (val, name) {
-          return val.toFixed(2) + '分';
-        }
       }],
       xAxis: {
         disableGrid: true
       },
       yAxis: {
-        title: '班级平均分(百分制)',
-        format: function (val) {
-          return val.toFixed(2);
-        },
+        title: '问题回答数量',
         min: 50
       },
       width: windowWidth,
       height: 200,
-      dataLabel: false,
+      dataLabel: true,
       dataPointShape: true,
       extra: {
         lineStyle: 'curve'

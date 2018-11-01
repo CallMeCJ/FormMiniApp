@@ -94,4 +94,6 @@
   margin: 30px 0 30px;
 }
 
-
+.split-block{
+  margin: 40px 0;
+}

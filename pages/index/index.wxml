@@ -18,7 +18,7 @@
   <view class="container">
     <view class='text-container-form-quiz'>
       <view class='text-content-form'>
-        <view class='count'>32</view>
+        <view class='count'>8</view>
         <view class='type'>问卷</view>
       </view>    
       <view class='text-content-quiz'>
