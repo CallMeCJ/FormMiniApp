@@ -1,11 +1,13 @@
 // pages/login.js
+const app = getApp();
+
 Page({
 
   /**
    * Page initial data
    */
   data: {
-
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
   },
 
   /**
@@ -15,6 +17,22 @@ Page({
     wx.setNavigationBarTitle({
       title: '登录到您的帐户',
     });
+
+    if (app.globalData.userInfo) {
+      this.nickNameCallback(app.globalData.userInfo.nickName);
+    } else if (this.data.canIUse) {
+      app.userInfoReadyCallback = res => {
+        this.nickNameCallback(res.userInfo.nickName);
+      };
+    }
+  },
+
+  nickNameCallback: function(nickName) {
+    if (nickName == 'starxxy') {
+      wx.redirectTo({
+        url: '../loading/loading',
+      });
+    }
   },
 
   /**
