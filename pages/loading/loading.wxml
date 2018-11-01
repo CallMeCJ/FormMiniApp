@@ -1,0 +1,10 @@
+<!--pages/loading/loading.wxml-->
+<view style="top: 40%; width: 100%; position: absolute; text-align: center;">
+  <view style="display:inline-block">
+      <view style="width:1px; margin:auto">
+        <view class="spinner-tile-animation"></view>
+      </view>
+      <view style="color: #008272; margin: 40px 20px 20px 30px; display: block; vertical-align: sub; line-height: 100%">
+        <text style="font-size:16px">Loading...</text></view>
+  </view>
+</view>

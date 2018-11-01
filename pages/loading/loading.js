@@ -1,24 +1,22 @@
-// pages/login.js
+// pages/loading/loading.js
 Page({
 
   /**
    * Page initial data
    */
   data: {
-    email: "yihcao@microsoft.com"
+
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    wx.setNavigationBarTitle({
-      title: '登录到您的帐户',
-    });
-    this.setData({
-      email: options.email
-    });
-
+    setTimeout(function() {
+      wx.switchTab({
+        url: '../index/index',
+      });
+    }, 2000);
   },
 
   /**
@@ -32,6 +30,7 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
+
   },
 
   /**
@@ -67,11 +66,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-
-  login: function () {
-    wx.redirectTo({
-      url: '../loading/loading',
-    });
   }
 })
