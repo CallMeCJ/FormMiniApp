@@ -5,13 +5,16 @@ Page({
    * Page initial data
    */
   data: {
-
+    email: "yihcao@microsoft.com"
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    wx.setNavigationBarTitle({
+      title: '登录到您的帐户',
+    });
     this.setData({
       email: options.email
     });

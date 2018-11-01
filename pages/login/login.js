@@ -12,7 +12,9 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
+    wx.setNavigationBarTitle({
+      title: '登录到您的帐户',
+    });
   },
 
   /**
