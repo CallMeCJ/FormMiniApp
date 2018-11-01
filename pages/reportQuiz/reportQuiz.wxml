@@ -33,12 +33,6 @@
     <view class='text-content-reward'>
       <view class='reward'>您击败了全球73%的用户</view>
     </view>
-    <!--
-    <view class='quata-title'>Capacity</view>
-    <canvas canvas-id="ringCanvas" class="canvas" style="height:300px" bindtouchstart="capacityTouchHandler"></canvas>
-    <view class='quata-title'>Survey VS Quiz</view>
-    <canvas canvas-id="pieCanvas" class="canvas" style="height:300px"></canvas>
-    -->
     <canvas canvas-id="radarCanvas" class="canvas distribution" style="height:300px"></canvas>
     <view class='suggest-text'>—— 偏爱选择和文本，“偏执狂”很配你</view>
     <view class='split-block'/>
@@ -46,15 +40,4 @@
     <view class='suggest-text'>—— 周末还在工作，“加班使我快乐”说的就是你</view>
     <view class='split-block bottom-line'>---到底啦---</view>
   </view>
-<!--
-  <view class="container">
-    <view bindtap="gotoPage" data-page="line" class="mt20 list-item">Line</view>
-    <view bindtap="gotoPage" data-page="scrollline" class="mt20 list-item">ScrollLine</view>
-    <view bindtap="gotoPage" data-page="column" class="mt20 list-item">Daily Active User</view>
-    <view bindtap="gotoPage" data-page="pie" class="mt20 list-item">Survey VS Quiz</view>
-    <view bindtap="gotoPage" data-page="ring" class="mt20 list-item">Quota</view>
-    <view bindtap="gotoPage" data-page="area" class="mt20 list-item">Area</view>
-    <view bindtap="gotoPage" data-page="radar" class="mt20 list-item">Question Type</view>
-  </view>
-  -->
 </view>

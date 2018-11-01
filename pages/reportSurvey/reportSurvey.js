@@ -141,12 +141,6 @@ Page({
       url: '../logs/logs'
     })
   },
-  gotoPage: function (e) {
-    var page = e.currentTarget.dataset.page;
-    wx.navigateTo({
-      url: '../charts/' + page + '/' + page
-    });
-  },
 
   getOfficeInfo: function () {
     wx.request({

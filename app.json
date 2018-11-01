@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/index2/index",
+    "pages/reportSurvey/reportSurvey",
+    "pages/reportQuiz/reportQuiz",
     "pages/login/login",
     "pages/login2/login",
     "pages/loading/loading",
@@ -18,14 +18,14 @@
     "selectedColor": "#008272",
     "list": [
       {
-        "pagePath": "pages/index/index",
-        "text": "报告Quiz",
+        "pagePath": "pages/reportSurvey/reportSurvey",
+        "text": "报告Survey",
         "iconPath": "images/report.png",
         "selectedIconPath": "images/report_HL.png"
       },
       {
-        "pagePath": "pages/index2/index",
-        "text": "报告Survey",
+        "pagePath": "pages/reportQuiz/reportQuiz",
+        "text": "报告Quiz",
         "iconPath": "images/report.png",
         "selectedIconPath": "images/report_HL.png"
       },

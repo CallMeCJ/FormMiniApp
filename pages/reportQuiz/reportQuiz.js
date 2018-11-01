@@ -59,98 +59,8 @@ Page({
       })
     }
 
-    // this.onLoadCapacity(e);
-    // this.onLoadFormType(e);
     this.onLoadQuestionType(e);
     this.onLoadDAF(e);
-  },
-
-  onLoadCapacity: function(e){
-    var windowWidth = 320;
-    try {
-      var res = wx.getSystemInfoSync();
-      windowWidth = res.windowWidth;
-    } catch (e) {
-      console.error('getSystemInfoSync failed!');
-    }
-
-    ringChart = new wxCharts({
-      animation: true,
-      canvasId: 'ringCanvas',
-      type: 'ring',
-      extra: {
-        ringWidth: 20,
-        pie: {
-          offsetAngle: -45
-        }
-      },
-      title: {
-        name: this.data.quota.percentage[0].data + '%',
-        color: '#FF6600',
-        fontSize: 25
-      },
-      subtitle: {
-        name: this.data.quota.percentage[0].name,
-        color: '#666666',
-        fontSize: 15
-      },
-      series: this.data.quota.percentage,
-      disablePieStroke: true,
-      width: windowWidth,
-      height: 250,
-      dataLabel: false,
-      legend: false,
-      background: '#f5f5f5',
-      padding: 0
-    });
-    ringChart.addEventListener('renderComplete', () => {
-      console.log('renderComplete');
-    });
-    setTimeout(() => {
-      ringChart.stopAnimation();
-    }, 500);
-  },
-
-  capacityTouchHandler: function (e) {
-    var index = ringChart.getCurrentDataIndex(e);
-    if(this.data.quota.percentage[index]){
-      console.log(this.data.quota.percentage[index].name);
-      ringChart.updateData({
-        title: {
-          name: this.data.quota.percentage[index].data + '%'
-        },
-        subtitle: {
-          name: this.data.quota.percentage[index].name,
-        }
-      });
-    }
-  },
-
-  //加载Form和Quiz的对比
-  onLoadFormType: function (e) {
-    var windowWidth = 320;
-    try {
-      var res = wx.getSystemInfoSync();
-      windowWidth = res.windowWidth;
-    } catch (e) {
-      console.error('getSystemInfoSync failed!');
-    }
-
-    pieChart = new wxCharts({
-      animation: true,
-      canvasId: 'pieCanvas',
-      type: 'pie',
-      series: [{
-        name: 'Survey',
-        data: 38,
-      }, {
-        name: 'Quiz',
-        data: 62,
-      }],
-      width: windowWidth,
-      height: 300,
-      dataLabel: true,
-    });
   },
 
   onLoadQuestionType: function(e){
@@ -231,12 +141,6 @@ Page({
     wx.navigateTo({
       url: '../logs/logs'
     })
-  },
-  gotoPage: function (e) {
-    var page = e.currentTarget.dataset.page;
-    wx.navigateTo({
-      url: '../charts/' + page + '/' + page
-    });
   },
 
   getOfficeInfo: function(){
