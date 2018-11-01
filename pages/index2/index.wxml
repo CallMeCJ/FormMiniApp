@@ -34,10 +34,10 @@
       <view class='reward'>您击败了全球83%的用户</view>
     </view>
     <canvas canvas-id="radarCanvas" class="canvas distribution" style="height:300px"></canvas>
-    <view class='suggest-text'>所有类型都使用的，“全能选手”很配你</view>
+    <view class='suggest-text'>—— 所有类型都使用的，“全能选手”很配你</view>
     <view class='split-block'/>
     <canvas canvas-id="columnCanvas" class="canvas activeForm" style="height:200px"></canvas>
-    <view class='suggest-text'>夜深了，你还在工作！果然深夜工作者</view>
+    <view class='suggest-text'>—— 夜深了，你还在工作！果然深夜工作者</view>
     <view class='split-block bottom-line'>---到底啦---</view>
   </view>
 </view>
