@@ -63,25 +63,6 @@ Page({
     // this.onLoadFormType(e);
     this.onLoadQuestionType(e);
     this.onLoadDAF(e);
-    this.onLoadTag(e);
-  },
-
-  onLoadTag(e){
-    let that = this,
-      labLen = that.data.labArr.length,
-      colorArr = that.data.colorArr,
-      colorLen = colorArr.length,
-      randomColorArr = [];
-    //判断执行
-    do {
-      let random = colorArr[Math.floor(Math.random() * colorLen)];
-      randomColorArr.push(random);
-      labLen--;
-    } while (labLen > 0)
-
-    that.setData({
-      randomColorArr: randomColorArr
-    });
   },
 
   onLoadCapacity: function(e){
