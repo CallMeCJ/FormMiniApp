@@ -14,7 +14,7 @@ Page({
   onLoad: function (options) {
     setTimeout(function() {
       wx.switchTab({
-        url: '../index/index',
+        url: '../reportSurvey/reportSurvey',
       });
     }, 2000);
   },
