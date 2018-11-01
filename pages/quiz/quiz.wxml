@@ -1,9 +1,9 @@
 <view class="container">
-    <canvas canvas-id="averageScoreCanvas" disable-scroll="true" class="canvas average" bindtouchstart="touchAverageHandler"></canvas>
-    <view class='suggest-text'>2017-12：这题也太难了吧！要全军覆没啦，我们还是小学生啊！</view>
-    <view class='suggest-text'>2018-03：这题也太多了吧！会做但是做不完啊！我们还是小学生啊！</view>
-    <canvas canvas-id="mathModulsRadar" class="canvas" style="height:300px"></canvas>
-    <view class='suggest-text'>应用题和空间图形</view>
-    <canvas canvas-id="rankingCanvas" disable-scroll="true" class="canvas" bindtouchstart='touchRankingHandler'></canvas>
+    <canvas canvas-id="averageScoreCanvas" class="canvas average" bindtouchstart="touchAverageHandler"></canvas>
+    <view class='suggest-text'>—— 大部分同学第九、第十题没有答</view>
+    <canvas canvas-id="mathModulsRadar" class="canvas mathModule" style="height:300px"></canvas>
+    <view class='suggest-text'>—— 应用题和空间图形还有进步空间</view>
+    <canvas canvas-id="rankingCanvas" class="canvas jackandrose" bindtouchstart='touchRankingHandler'></canvas>
+    <view class='suggest-text'>—— 梁山伯与朱丽叶成绩共进退</view>
     <view class='split-block bottom-line'>---到底啦---</view>
 </view>

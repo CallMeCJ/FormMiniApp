@@ -20,3 +20,10 @@
   margin: 0px 20px;
   font-size: 15px;
 }
+.bottom-line{
+  text-align: center;
+  font-size: 12px;
+}
+.split-block{
+  margin: 40px 0;
+}

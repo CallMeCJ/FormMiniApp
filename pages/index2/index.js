@@ -12,24 +12,24 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    quota:{
+    quota: {
       percentage: [
         { name: 'My Forms', data: 73, stroke: false },
         { name: 'Recycle bin', data: 10, stroke: false },
         { name: 'Avaliable', data: 17, stroke: false }
       ]
     },
-    questionType:{
+    questionType: {
       categories: ['选择', '评分', '日期', '排序', '里克特量表', '文本', 'NPS'],
-      categoriesData: [31234, 10025, 20000, 15000, 12200, 30256, 2200],
+      categoriesData: [31234, 28025, 24000, 25600, 22200, 33256, 22250],
       maxValue: 10000,
     },
-    dailyActiveForm:{
-      categoriesDatas: [15, 17, 18, 20, 16, 5, 4, 20, 17, 18, 20, 19, 5, 6],
-      categories: ['10/15', '10/16', '10/17', '10/18', '10/19', '10/20', '10/21', '10/22', '10/23', '10/24', '10/25', '10/26','10/27','10/28']
+    monthlyActiveForm: {
+      categoriesDatas: [0, 1, 8, 6, 1, 5, 4, 10, 6, 6, 7, 2, 1, 2, 20, 27, 53, 32, 20, 1, 1, 2, 0, 0],
+      categories: ['08:00', '', '', '11:00', '', '', '14:00', '', '', '17:00', '', '', '20:00', '', '', '23:00', '', '', '02:00', '', '', '05:00', '', '07:00']
     },
     //标签云
-    labArr: ['辛勤的园丁', '表单重度患者', '偏执狂', '加班使我快乐'],
+    labArr: ['年度好员工', '备受欢迎', '深夜工作者', '全能选手'],
   },
   onLoad: function (e) {
     if (app.globalData.userInfo) {
@@ -37,7 +37,7 @@ Page({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
       })
-    } else if (this.data.canIUse){
+    } else if (this.data.canIUse) {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
@@ -58,102 +58,11 @@ Page({
         }
       })
     }
-
-    // this.onLoadCapacity(e);
-    // this.onLoadFormType(e);
     this.onLoadQuestionType(e);
-    this.onLoadDAF(e);
+    this.onLoadMAF(e);
   },
 
-  onLoadCapacity: function(e){
-    var windowWidth = 320;
-    try {
-      var res = wx.getSystemInfoSync();
-      windowWidth = res.windowWidth;
-    } catch (e) {
-      console.error('getSystemInfoSync failed!');
-    }
-
-    ringChart = new wxCharts({
-      animation: true,
-      canvasId: 'ringCanvas',
-      type: 'ring',
-      extra: {
-        ringWidth: 20,
-        pie: {
-          offsetAngle: -45
-        }
-      },
-      title: {
-        name: this.data.quota.percentage[0].data + '%',
-        color: '#FF6600',
-        fontSize: 25
-      },
-      subtitle: {
-        name: this.data.quota.percentage[0].name,
-        color: '#666666',
-        fontSize: 15
-      },
-      series: this.data.quota.percentage,
-      disablePieStroke: true,
-      width: windowWidth,
-      height: 250,
-      dataLabel: false,
-      legend: false,
-      background: '#f5f5f5',
-      padding: 0
-    });
-    ringChart.addEventListener('renderComplete', () => {
-      console.log('renderComplete');
-    });
-    setTimeout(() => {
-      ringChart.stopAnimation();
-    }, 500);
-  },
-
-  capacityTouchHandler: function (e) {
-    var index = ringChart.getCurrentDataIndex(e);
-    if(this.data.quota.percentage[index]){
-      console.log(this.data.quota.percentage[index].name);
-      ringChart.updateData({
-        title: {
-          name: this.data.quota.percentage[index].data + '%'
-        },
-        subtitle: {
-          name: this.data.quota.percentage[index].name,
-        }
-      });
-    }
-  },
-
-  //加载Form和Quiz的对比
-  onLoadFormType: function (e) {
-    var windowWidth = 320;
-    try {
-      var res = wx.getSystemInfoSync();
-      windowWidth = res.windowWidth;
-    } catch (e) {
-      console.error('getSystemInfoSync failed!');
-    }
-
-    pieChart = new wxCharts({
-      animation: true,
-      canvasId: 'pieCanvas',
-      type: 'pie',
-      series: [{
-        name: 'Survey',
-        data: 38,
-      }, {
-        name: 'Quiz',
-        data: 62,
-      }],
-      width: windowWidth,
-      height: 300,
-      dataLabel: true,
-    });
-  },
-
-  onLoadQuestionType: function(e){
+  onLoadQuestionType: function (e) {
     var windowWidth = 500;
     var windowHeigh = 300;
     try {
@@ -181,7 +90,7 @@ Page({
       }
     });
   },
-  onLoadDAF: function(e){
+  onLoadMAF: function (e) {
     var windowWidth = 320;
     try {
       var res = wx.getSystemInfoSync();
@@ -194,13 +103,13 @@ Page({
       canvasId: 'columnCanvas',
       type: 'column',
       animation: true,
-      categories: this.data.dailyActiveForm.categories,
+      categories: this.data.monthlyActiveForm.categories,
       series: [{
-        name: '日编辑表单量',
-        data: this.data.dailyActiveForm.categoriesDatas,
+        name: '上月分时活跃表单',
+        data: this.data.monthlyActiveForm.categoriesDatas,
       }],
       yAxis: {
-        title: '总量',
+        title: '编辑表单总量',
         min: 0
       },
       xAxis: {
@@ -216,8 +125,8 @@ Page({
       height: 200,
     });
   },
-  
-  getUserInfo: function(e) {
+
+  getUserInfo: function (e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
@@ -239,13 +148,13 @@ Page({
     });
   },
 
-  getOfficeInfo: function(){
+  getOfficeInfo: function () {
     wx.request({
       url: app.globalData.serverPath + '/formapi/api/userInfo/',
       header: {
-        Authorization:app.globalData.token
+        Authorization: app.globalData.token
       },
-      success: function(res){
+      success: function (res) {
         console.log(res);
       }
     })

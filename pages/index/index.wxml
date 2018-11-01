@@ -4,7 +4,7 @@
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> Get WeChat photo </button>
     <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="../../images/teacher.png" mode="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
@@ -40,10 +40,10 @@
     <canvas canvas-id="pieCanvas" class="canvas" style="height:300px"></canvas>
     -->
     <canvas canvas-id="radarCanvas" class="canvas distribution" style="height:300px"></canvas>
-    <view class='suggest-text'>偏爱选择和文本，“偏执狂”很配你</view>
+    <view class='suggest-text'>—— 偏爱选择和文本，“偏执狂”很配你</view>
     <view class='split-block'/>
     <canvas canvas-id="columnCanvas" class="canvas activeForm" style="height:200px"></canvas>
-    <view class='suggest-text'>周末还在工作，“加班使我快乐”说的就是你</view>
+    <view class='suggest-text'>—— 周末还在工作，“加班使我快乐”说的就是你</view>
     <view class='split-block bottom-line'>---到底啦---</view>
   </view>
 <!--
