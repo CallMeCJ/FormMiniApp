@@ -1,5 +1,7 @@
 {
   "pages":[
+    "pages/login/login",
+    "pages/login2/login",
     "pages/index/index",
     "pages/survey/survey",
     "pages/quiz/quiz",
@@ -14,7 +16,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#008272",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"white"
   },
   "tabBar": {
     "selectedColor": "#008272",
