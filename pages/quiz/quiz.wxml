@@ -1,6 +1,6 @@
 <view class="container">
     <canvas canvas-id="averageScoreCanvas" class="canvas average"></canvas>
-    <view class='suggest-text'>—— 大部分同学第九、第十题没有答</view>
+    <view class='suggest-text'>—— 大部分同学Q9、Q10没有答</view>
     <canvas canvas-id="mathModulsRadar" class="canvas mathModule" style="height:300px"></canvas>
     <view class='suggest-text'>—— 应用题和空间图形还有进步空间</view>
     <canvas canvas-id="rankingCanvas" class="canvas jackandrose" bindtouchstart='touchRankingHandler'></canvas>
