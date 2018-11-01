@@ -1,6 +1,7 @@
 <!--logs.wxml-->
 <view class="container">
     <canvas canvas-id="finishRateCanvas" class="canvas finishRate"></canvas>
+    <view class='suggest-text'>—— 完成度小于0.3的问卷里面80%的题型都是文本</view>
     <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas responseTime" bindtouchstart="respondTouchHandler"></canvas>
     <view class='suggest-text'>—— 每周三下午发放问卷响应度会更好</view>    
     <canvas canvas-id="areaCanvas" class="canvas responseCount" bindtouchstart="dropTouchHandler"></canvas>

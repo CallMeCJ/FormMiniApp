@@ -1,7 +1,6 @@
 //logs.js
 const util = require('../../utils/util.js')
 const wxCharts = require('../../utils/wxcharts.js');
-var ringChart = null;
 var lineChart = null;
 var areaChart = null;
 
@@ -23,9 +22,39 @@ Page({
   },
 
   onLoad: function (e) {
+    this.onLoadFinishedRate(e);
     this.onLoadRespond(e);
     this.onLoadDrop(e);
-    this.onLoadFinishedRate(e);
+  },
+
+  onLoadFinishedRate: function (e) {
+    var windowWidth = 320;
+    try {
+      var res = wx.getSystemInfoSync();
+      windowWidth = res.windowWidth;
+    } catch (e) {
+      console.error('getSystemInfoSync failed!');
+    }
+
+    new wxCharts({
+      canvasId: 'finishRateCanvas',
+      type: 'line',
+      categories: this.data.FinishRate.categories,
+      animation: true,
+      series: [{
+        name: '问卷题目回答率',
+        data: this.data.FinishRate.data
+      }],
+      yAxis: {
+        title: '回答人数比例（100%）',
+        min: 0,
+      },
+      xAxis: {
+        disableGrid: true
+      },
+      width: windowWidth,
+      height: 200
+    });
   },
 
   createRespondData: function () {
@@ -52,7 +81,6 @@ Page({
       type: 'line',
       categories: simulationData.categories,
       animation: true,
-      // background: '#f5f5f5',
       series: [{
         name: '上午',
         data: simulationData.data
@@ -108,61 +136,15 @@ Page({
       yAxis: {
         title: '回答数量',
         min: 0,
-        fontColor: '#8085e9',
-        gridColor: '#8085e9',
-        titleFontColor: '#f7a35c'
       },
       xAxis: {
-        title: '题目回答率（100%）',
-        fontColor: '#7cb5ec',
-        gridColor: '#7cb5ec',
-        titleFontSize:'25px'
-      },
-      extra: {
-        legendTextColor: '#cb2431'
-      },
-      width: windowWidth,
-      height: 300
-    });
-  },
-  onLoadFinishedRate: function (e) {
-    var windowWidth = 320;
-    try {
-      var res = wx.getSystemInfoSync();
-      windowWidth = res.windowWidth;
-    } catch (e) {
-      console.error('getSystemInfoSync failed!');
-    }
-
-    areaChart = new wxCharts({
-      canvasId: 'finishRateCanvas',
-      type: 'area',
-      categories: this.data.FinishRate.categories,
-      animation: true,
-      series: [{
-        name: '问卷题目回答率',
-        data: this.data.FinishRate.data
-      }],
-      yAxis: {
-        title: '回答人数比例（100%）',
-        min: 0,
-        fontColor: '#8085e9',
-        gridColor: '#8085e9',
-        titleFontColor: '#f7a35c'
-      },
-      xAxis: {
-        fontColor: '#7cb5ec',
-        gridColor: '#7cb5ec',
-        fontSize: '8px',
-      },
-      extra: {
-        legendTextColor: '#cb2431'
+        title: '题目回答率（100%）'
       },
       width: windowWidth,
       height: 200
     });
   },
-
+  
   dropTouchHandler: function (e) {
     console.log(areaChart.getCurrentDataIndex(e));
     areaChart.showToolTip(e);
