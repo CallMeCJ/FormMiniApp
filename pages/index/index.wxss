@@ -92,11 +92,7 @@
 .activeForm{
   margin: 30px 0 30px;
 }
-.sugges-text{
-  text-align: right;
-  margin: 0px 20px;
-  font-size: 15px;
-}
+
 .split-block{
   margin: 40px 0;
 }
