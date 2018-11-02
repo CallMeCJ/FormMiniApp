@@ -58,6 +58,9 @@ Page({
         }
       })
     }
+    wx.showShareMenu({
+      withShareTicket:true
+    })
     this.onLoadQuestionType(e);
     this.onLoadMAF(e);
   },

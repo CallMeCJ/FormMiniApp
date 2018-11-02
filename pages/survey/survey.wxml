@@ -5,7 +5,7 @@
     <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas responseTime" bindtouchstart="respondTouchHandler"></canvas>
     <view class='suggest-text'>—— 每周三下午发放问卷响应度会更好</view>    
     <canvas canvas-id="areaCanvas" class="canvas responseCount" bindtouchstart="dropTouchHandler"></canvas>
-    <view class='suggest-text'>—— 表单<text style="color:#008272">家庭日活动反馈</text>，大部分人在回答第四题Q4(文本题):您对本次活动满意吗？的时候离开了, 评分题更适合这类问题</view>
+    <view class='suggest-text drop'>—— 表单<text style="color:#008272">家庭日活动反馈</text>中，大部分人在回答Q4(文本题):<text style="color:#008272">您对本次活动满意吗？</text>的时候离开了, 评分题更适合这类问题</view>
     <view class='split-block bottom-line'>---到底啦---</view>
 </view>
 
