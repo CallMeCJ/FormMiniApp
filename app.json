@@ -19,25 +19,13 @@
     "list": [
       {
         "pagePath": "pages/reportSurvey/reportSurvey",
-        "text": "Report Survey",
-        "iconPath": "images/report.png",
-        "selectedIconPath": "images/report_HL.png"
-      },
-      {
-        "pagePath": "pages/reportQuiz/reportQuiz",
-        "text": "Report Quiz",
+        "text": "Report",
         "iconPath": "images/report.png",
         "selectedIconPath": "images/report_HL.png"
       },
       {
         "pagePath": "pages/survey/survey",
-        "text": "Ideas Survey",
-        "iconPath": "images/ideas.png",
-        "selectedIconPath": "images/ideas_HL.png"
-      },
-      {
-        "pagePath": "pages/quiz/quiz",
-        "text": "Ideas Quiz",
+        "text": "Ideas",
         "iconPath": "images/ideas.png",
         "selectedIconPath": "images/ideas_HL.png"
       }

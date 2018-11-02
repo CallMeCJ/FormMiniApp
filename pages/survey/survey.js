@@ -11,7 +11,7 @@ Page({
       data: [10, 20, 30, 15, 10, 5, 4, 3, 2, 1],
     },
     ResponseData:{
-      categories: ['星期一', '星期二', '星期三', '星期四', '星期五'],
+      categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
       data: [9, 8, 10, 13, 12], 
       data2: [5, 4, 3, 5, 6]
     },

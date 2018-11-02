@@ -1,11 +1,11 @@
 <!--logs.wxml-->
 <view class="container">
     <canvas canvas-id="finishRateCanvas" class="canvas finishRate"></canvas>
-    <view class='suggest-text drop'>—— 80% of the question types in the forms with a completion degree of less than 30% are texts.</view>
+    <view class='suggest-text drop'>-- Those surveys with less than 30% response rate are mainly consisted with "Text" questions.</view>
     <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas responseTime" bindtouchstart="respondTouchHandler"></canvas>
-    <view class='suggest-text'>—— It would be better to issue a questionnaire responsiveness every Wednesday afternoon.</view>    
+    <view class='suggest-text'>-- It would be better to distribute a survey for higher responsiveness on every Wednesday afternoon.</view>    
     <canvas canvas-id="areaCanvas" class="canvas responseCount" bindtouchstart="dropTouchHandler"></canvas>
-    <view class='suggest-text drop'>—— In form <text style="color:#008272">Family Day Activity Feedback</text>,most people left when answering Q4 (text question type):<text style="color:#008272">Are you satisfied with this event?</text>. Mini Form feels that the scoring question is more suitable than the text question.</view>
+    <view class='suggest-text drop'>-- In form <text style="color:#008272">Family Day Activity Feedback</text>,most people left when answering Q4 ("Text" question):<text style="color:#008272">Are you satisfied with this event?</text>. Forms Assistant feels that the Rating question is more suitable than the text question.</view>
     <view class='split-block bottom-line'>---END---</view>
 </view>
 

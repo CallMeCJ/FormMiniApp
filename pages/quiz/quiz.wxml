@@ -1,9 +1,9 @@
 <view class="container">
     <canvas canvas-id="averageScoreCanvas" class="canvas average"></canvas>
-    <view class='suggest-text'>—— Most of the students didn't answer <text style="color:#008272">Q9</text> and <text style="color:#008272">Q10</text></view>
+    <view class='suggest-text'>-- Most students didn't answer <text style="color:#008272">Q9</text> and <text style="color:#008272">Q10</text></view>
     <canvas canvas-id="mathModulsRadar" class="canvas mathModule" style="height:300px"></canvas>
-    <view class='suggest-text'>—— <text style="color:#008272">Math application</text> and <text style="color:#008272">Geometry</text> still have room to improvement</view>
+    <view class='suggest-text'>-- <text style="color:#008272">Math application</text> and <text style="color:#008272">Geometry</text> still have room to improvement</view>
     <canvas canvas-id="rankingCanvas" class="canvas jackandrose" bindtouchstart='touchRankingHandler'></canvas>
-    <view class='suggest-text'>—— The average score of <text style="color:#008272">Rose</text> and <text style="color:#008272">Jack</text> are similar</view>
+    <view class='suggest-text'>-- The average score of <text style="color:#008272">Rose</text> and <text style="color:#008272">Jack</text> are similar</view>
     <view class='split-block bottom-line'>---END---</view>
 </view>

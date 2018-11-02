@@ -4,7 +4,7 @@
   <view class="userinfo">
     <block>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="../../images/survey_icon.png" mode="cover"></image>
-      <text class="userinfo-nickname">Chaojie Zheng</text>
+      <text class="userinfo-nickname">Romeo</text>
     </block>
   </view>
   <view class='userinfo-tag'>
