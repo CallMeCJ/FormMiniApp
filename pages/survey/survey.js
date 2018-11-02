@@ -42,11 +42,11 @@ Page({
       categories: this.data.FinishRate.categories,
       animation: true,
       series: [{
-        name: '全部问卷问题回答率',
+        name: 'Answer Rate Of Forms',
         data: this.data.FinishRate.data
       }],
       yAxis: {
-        title: '回答人数比例（100%）',
+        title: 'Respondents Proportion（%）',
         min: 0,
       },
       xAxis: {
@@ -82,17 +82,17 @@ Page({
       categories: simulationData.categories,
       animation: true,
       series: [{
-        name: '上午',
+        name: 'Monrning',
         data: simulationData.data
       }, {
-        name: '下午',
+        name: 'Afternoon',
           data: this.data.ResponseData.data2
       }],
       xAxis: {
         disableGrid: true
       },
       yAxis: {
-        title: '响应时间（分）',
+        title: 'Response time（min）',
         min: 0
       },
       width: windowWidth,
@@ -130,15 +130,15 @@ Page({
       categories: this.data.DropData.categories,
       animation: true,
       series: [{
-        name: '回答量',
+        name: 'Number of Responses',
         data: this.data.DropData.data
       }],
       yAxis: {
-        title: '回答数量',
+        title: 'Submit Responses',
         min: 0,
       },
       xAxis: {
-        title: '题目回答率（100%）'
+        
       },
       width: windowWidth,
       height: 200

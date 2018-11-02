@@ -30,13 +30,13 @@
       <view class='type'>Responses</view>
     </view>
     <view class='text-content-reward'>
-      <view class='reward'>您击败了全球83%的用户</view>
+      <view class='reward'>You beat 83% of the world's users</view>
     </view>
     <canvas canvas-id="radarCanvas" class="canvas distribution" style="height:300px"></canvas>
-    <view class='suggest-text'>—— 所有类型都使用，“全能选手”很配你</view>
+    <view class='suggest-text'>—— All types are used, "All-Around Player" is you.</view>
     <view class='split-block'/>
     <canvas canvas-id="columnCanvas" class="canvas activeForm" style="height:200px"></canvas>
-    <view class='suggest-text'>—— 夜深了，你还在工作！果然是“深夜工作者”</view>
-    <view class='split-block bottom-line'>---到底啦---</view>
+    <view class='suggest-text'>—— Late at night, you are working! "Midnight King" deserved.</view>
+    <view class='split-block bottom-line'>---END---</view>
   </view>
 </view>

@@ -20,7 +20,7 @@ Page({
       ]
     },
     questionType: {
-      categories: ['选择', '评分', '日期', '排序', '里克特量表', '文本', 'NPS'],
+      categories: ['Choice', 'Rating', 'Date', 'Ranking', 'Likert', 'Text', 'NPS'],
       categoriesData: [31234, 28025, 24000, 25600, 22200, 33256, 22250],
       maxValue: 10000,
     },
@@ -29,35 +29,9 @@ Page({
       categories: ['08:00', '', '', '11:00', '', '', '14:00', '', '', '17:00', '', '', '20:00', '', '', '23:00', '', '', '02:00', '', '', '05:00', '', '07:00']
     },
     //标签云
-    labArr: ['年度好员工', '备受欢迎', '深夜工作者', '全能选手'],
+    labArr: ['Employee of the Year', 'Popular', 'Midnight King', 'All-Around Player'],
   },
   onLoad: function (e) {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse) {
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
-          })
-        }
-      })
-    }
     wx.showShareMenu({
       withShareTicket:true
     })
@@ -81,7 +55,7 @@ Page({
       type: 'radar',
       categories: this.data.questionType.categories,
       series: [{
-        name: '问题类型偏好',
+        name: 'Preference Question Type',
         data: this.data.questionType.categoriesData,
       }],
       width: windowWidth,
@@ -108,11 +82,11 @@ Page({
       animation: true,
       categories: this.data.monthlyActiveForm.categories,
       series: [{
-        name: '上月分时活跃表单',
+        name: 'Active Forms Per Hour Last Month',
         data: this.data.monthlyActiveForm.categoriesDatas,
       }],
       yAxis: {
-        title: '编辑表单总量',
+        title: 'Total Active Forms',
         min: 0
       },
       xAxis: {
