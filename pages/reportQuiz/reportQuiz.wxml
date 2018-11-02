@@ -4,11 +4,11 @@
   <view class="userinfo">
     <block>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="../../images/quiz_icon.png" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <text class="userinfo-nickname">Xingyu Xu</text>
     </block>
   </view>
   <view class='userinfo-tag'>
-    <view class='userinfo-keyword'>标签</view>
+    <view class='userinfo-keyword'>Tag</view>
       <block wx:for="{{labArr}}" wx:key="key" wx:for-index="key" wx:for-item="v" class="" style="display:flex;flex-direction: row;">
           <view class='lab' data-key="{{key}}" style="background-color:#008272">{{v}}</view>
       </block>
@@ -18,25 +18,25 @@
     <view class='text-container-form-quiz'>
       <view class='text-content-form'>
         <view class='count'>8</view>
-        <view class='type'>问卷</view>
+        <view class='type'>Survey</view>
       </view>    
       <view class='text-content-quiz'>
         <view class='count'>215</view>
-        <view class='type'>测验</view>
+        <view class='type'>Quiz</view>
       </view>
     </view>
     <view class='text-content-response'>
       <view class='count'>4989</view>
-      <view class='type'>回复</view>
+      <view class='type'>Responses</view>
     </view>
     <view class='text-content-reward'>
-      <view class='reward'>您击败了全球73%的用户</view>
+      <view class='reward'>Defeated 73% of the users worldwide</view>
     </view>
     <canvas canvas-id="radarCanvas" class="canvas distribution" style="height:300px"></canvas>
-    <view class='suggest-text'>—— 偏爱选择和文本，“偏执狂”很配你</view>
+    <view class='suggest-text'>—— you are preferred text and choice question types，'Paranoia' suits you</view>
     <view class='split-block'/>
     <canvas canvas-id="columnCanvas" class="canvas activeForm" style="height:200px"></canvas>
-    <view class='suggest-text'>—— 周末还在工作，“加班使我快乐”说的就是你</view>
-    <view class='split-block bottom-line'>---到底啦---</view>
+    <view class='suggest-text'>—— You are still working on weekend，it is you that 'Overtime working makes me happy'</view>
+    <view class='split-block bottom-line'>---END---</view>
   </view>
 </view>

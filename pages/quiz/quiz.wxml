@@ -1,9 +1,9 @@
 <view class="container">
     <canvas canvas-id="averageScoreCanvas" class="canvas average"></canvas>
-    <view class='suggest-text'>—— 大部分同学Q9、Q10没有答</view>
+    <view class='suggest-text'>—— Most of the students didn't answer <text style="color:#008272">Q9</text> and <text style="color:#008272">Q10</text></view>
     <canvas canvas-id="mathModulsRadar" class="canvas mathModule" style="height:300px"></canvas>
-    <view class='suggest-text'>—— 应用题和空间图形还有进步空间</view>
+    <view class='suggest-text'>—— <text style="color:#008272">Word problem</text> and <text style="color:#008272">Geometry</text> still have room to improvement</view>
     <canvas canvas-id="rankingCanvas" class="canvas jackandrose" bindtouchstart='touchRankingHandler'></canvas>
-    <view class='suggest-text'>—— 梁山伯与朱丽叶成绩共进退</view>
-    <view class='split-block bottom-line'>---到底啦---</view>
+    <view class='suggest-text'>—— The average of <text style="color:#008272">Rose</text> and <text style="color:#008272">Jack</text> are similar</view>
+    <view class='split-block bottom-line'>---END---</view>
 </view>

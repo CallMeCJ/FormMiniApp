@@ -9,7 +9,7 @@ var app = getApp();
 Page({
   data: {
     averageScore: {
-      mathModuls: ['数的运算', '初步代数', '应用题', '量的计算', '空间与图形', '统计与概率'],
+      mathModuls: ['Operation', 'Algebra', 'Word problem', 'Fraction', 'Geometry', 'Statistics'],
       mathModulsScore: [95, 90, 50, 83, 30, 70],
       timeCategories: ['Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6', 'Q7', 'Q8', 'Q9', 'Q10'],
       averageScoresOfMath: [25, 25, 25, 25, 25, 25, 24, 20, 5, 2],
@@ -39,7 +39,7 @@ Page({
       type: 'radar',
       categories: this.data.averageScore.mathModuls,
       series: [{
-        name: '数学模块掌握度',
+        name: 'Grasp degree of mathematical module',
         data: this.data.averageScore.mathModulsScore
       }],
       width: windowWidth,
@@ -68,20 +68,20 @@ Page({
       animation: true,
       background: '#f5f5f5',
       series: [{
-        name: '梁山伯平均分',
+        name: 'The average of Jack',
         data: this.data.averageScore.jackScore
       }, {
-        name: '朱丽叶平均分',
+        name: 'The average of Rose',
         data: this.data.averageScore.roseScore
       }, {
-        name: '班级平均分',
+        name: 'Class average',
         data: this.data.averageScore.standard
       }],
       xAxis: {
         disableGrid: true
       },
       yAxis: {
-        title: '平均分（百分制）',
+        title: 'Average(100)',
         min: 60
       },
       width: windowWidth,
@@ -109,14 +109,14 @@ Page({
       animation: true,
       categories: this.data.averageScore.timeCategories,
       series: [{
-        name: '2018/10/25 随堂测验--初步代数',
+        name: '2018/10/25 Quiz--Elements of Alge-bra',
         data: this.data.averageScore.averageScoresOfMath,
       }],
       xAxis: {
         disableGrid: true
       },
       yAxis: {
-        title: '问题回答数量',
+        title: 'The count of anwsered questions',
         min: 50
       },
       extra: {

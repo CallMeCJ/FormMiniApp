@@ -12,15 +12,8 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    quota:{
-      percentage: [
-        { name: 'My Forms', data: 73, stroke: false },
-        { name: 'Recycle bin', data: 10, stroke: false },
-        { name: 'Avaliable', data: 17, stroke: false }
-      ]
-    },
     questionType:{
-      categories: ['选择', '评分', '日期', '排序', '里克特量表', '文本', 'NPS'],
+      categories: ['Choice', 'Rating', 'Date', 'Ranking', 'Likert', 'Text', 'NPS'],
       categoriesData: [31234, 10025, 20000, 15000, 12200, 30256, 2200],
       maxValue: 10000,
     },
@@ -29,7 +22,7 @@ Page({
       categories: ['10/15', '10/16', '10/17', '10/18', '10/19', '10/20', '10/21', '10/22', '10/23', '10/24', '10/25', '10/26','10/27','10/28']
     },
     //标签云
-    labArr: ['辛勤园丁', '加班使我快乐','表单重度使用者', '偏执狂'],
+    labArr: ['Hardworking education worker', 'Overtime working makes me happy', 'Forms fans', 'Paranoia'],
   },
   onLoad: function (e) {
     if (app.globalData.userInfo) {
@@ -79,7 +72,7 @@ Page({
       type: 'radar',
       categories: this.data.questionType.categories,
       series: [{
-        name: '问题类型偏好',
+        name: 'Preferred question types',
         data: this.data.questionType.categoriesData,
       }],
       width: windowWidth,
@@ -106,11 +99,11 @@ Page({
       animation: true,
       categories: this.data.dailyActiveForm.categories,
       series: [{
-        name: '日编辑表单量',
+        name: 'Daily editing form count',
         data: this.data.dailyActiveForm.categoriesDatas,
       }],
       yAxis: {
-        title: '总量',
+        title: 'total',
         min: 0
       },
       xAxis: {
