@@ -12,32 +12,32 @@
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#008272",
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "Forms小秘"
+    "navigationBarTitleText": "Forms Assistant"
   },
   "tabBar": {
     "selectedColor": "#008272",
     "list": [
       {
         "pagePath": "pages/reportSurvey/reportSurvey",
-        "text": "报告Survey",
+        "text": "Report Survey",
         "iconPath": "images/report.png",
         "selectedIconPath": "images/report_HL.png"
       },
       {
         "pagePath": "pages/reportQuiz/reportQuiz",
-        "text": "报告Quiz",
+        "text": "Report Quiz",
         "iconPath": "images/report.png",
         "selectedIconPath": "images/report_HL.png"
       },
       {
         "pagePath": "pages/survey/survey",
-        "text": "创意Survey",
+        "text": "Ideas Survey",
         "iconPath": "images/ideas.png",
         "selectedIconPath": "images/ideas_HL.png"
       },
       {
         "pagePath": "pages/quiz/quiz",
-        "text": "创意Quiz",
+        "text": "Ideas Quiz",
         "iconPath": "images/ideas.png",
         "selectedIconPath": "images/ideas_HL.png"
       }
