@@ -15,7 +15,7 @@ Page({
    */
   onLoad: function (options) {
     wx.setNavigationBarTitle({
-      title: '登录到您的帐户',
+      title: 'Sign in to your account',
     });
 
     if (app.globalData.userInfo) {

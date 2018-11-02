@@ -7,7 +7,7 @@
   <image src="../../images/arrow_left.svg"
     style="width: 20px; height: 20px; margin: 3px 5px 0 8px"></image>
   <text style="font-size: 12px">{{email}}</text></view>
-<view style="margin: 10px 20px"><text style="font: 24px bold">输入密码</text></view>
-<view style="margin: 10px 20px;"><input style="border-bottom: 1px #0067b8 solid; font-size: 16px" placeholder="密码" focus="true" type='password'></input></view>
-<view style="margin: 10px 20px"><text style="font-size: 12px; color:#0067b8">忘记了密码</text></view>
-<view style="margin: 40px 20px 0 0; float:right"><button bindtap="login" style="width:100px;height:32px;font-size:16px;color:white;background-color:#0067b8;line-height:1.6"><text style="vertical-align:middle">登录</text></button></view>
+<view style="margin: 10px 20px"><text style="font: 24px bold">Enter password</text></view>
+<view style="margin: 10px 20px;"><input style="border-bottom: 1px #0067b8 solid; font-size: 16px" placeholder="Password" focus="true" type='password'></input></view>
+<view style="margin: 10px 20px"><text style="font-size: 13px; color:#0067b8">Forgot my password</text></view>
+<view style="margin: 40px 20px 0 0; float:right"><button bindtap="login" style="width:100px;height:32px;font-size:16px;color:white;background-color:#0067b8;line-height:1.6"><text style="vertical-align:middle">Sign in</text></button></view>
