@@ -42,7 +42,7 @@ Page({
       categories: this.data.FinishRate.categories,
       animation: true,
       series: [{
-        name: '问卷"家庭日活动反馈"问题回答率',
+        name: '全部问卷问题回答率',
         data: this.data.FinishRate.data
       }],
       yAxis: {

@@ -4,11 +4,11 @@
   <view class="userinfo">
     <block>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="../../images/survey_icon.png" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <text class="userinfo-nickname">Chaojie Zheng</text>
     </block>
   </view>
   <view class='userinfo-tag'>
-    <view class='userinfo-keyword'>标签</view>
+    <view class='userinfo-keyword'>Tag</view>
       <block wx:for="{{labArr}}" wx:key="key" wx:for-index="key" wx:for-item="v" class="" style="display:flex;flex-direction: row;">
           <view class='lab' data-key="{{key}}" style="background-color:#008272">{{v}}</view>
       </block>
@@ -18,16 +18,16 @@
     <view class='text-container-form-quiz'>
       <view class='text-content-form'>
         <view class='count'>241</view>
-        <view class='type'>问卷</view>
+        <view class='type'>Form</view>
       </view>    
       <view class='text-content-quiz'>
         <view class='count'>10</view>
-        <view class='type'>测验</view>
+        <view class='type'>Quiz</view>
       </view>
     </view>
     <view class='text-content-response'>
       <view class='count'>52636</view>
-      <view class='type'>回复</view>
+      <view class='type'>Responses</view>
     </view>
     <view class='text-content-reward'>
       <view class='reward'>您击败了全球83%的用户</view>
@@ -36,7 +36,7 @@
     <view class='suggest-text'>—— 所有类型都使用，“全能选手”很配你</view>
     <view class='split-block'/>
     <canvas canvas-id="columnCanvas" class="canvas activeForm" style="height:200px"></canvas>
-    <view class='suggest-text'>—— 夜深了，你还在工作！果然深夜工作者</view>
+    <view class='suggest-text'>—— 夜深了，你还在工作！果然是“深夜工作者”</view>
     <view class='split-block bottom-line'>---到底啦---</view>
   </view>
 </view>

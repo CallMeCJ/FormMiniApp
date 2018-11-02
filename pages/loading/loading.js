@@ -16,7 +16,7 @@ Page({
       wx.switchTab({
         url: '../reportSurvey/reportSurvey',
       });
-    }, 1000);
+    }, 2000);
   },
 
   /**
