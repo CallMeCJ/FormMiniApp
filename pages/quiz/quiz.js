@@ -9,7 +9,7 @@ var app = getApp();
 Page({
   data: {
     averageScore: {
-      mathModuls: ['Operation', 'Algebra', 'Word problem', 'Fraction', 'Geometry', 'Statistics'],
+      mathModuls: ['Operation', 'Algebra', 'Math application', 'Fraction', 'Geometry', 'Statistics'],
       mathModulsScore: [95, 90, 50, 83, 30, 70],
       timeCategories: ['Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6', 'Q7', 'Q8', 'Q9', 'Q10'],
       averageScoresOfMath: [25, 25, 25, 25, 25, 25, 24, 20, 5, 2],
@@ -39,7 +39,7 @@ Page({
       type: 'radar',
       categories: this.data.averageScore.mathModuls,
       series: [{
-        name: 'Grasp degree of mathematical module',
+        name: 'Students perfermance of mathematical module',
         data: this.data.averageScore.mathModulsScore
       }],
       width: windowWidth,
@@ -68,10 +68,10 @@ Page({
       animation: true,
       background: '#f5f5f5',
       series: [{
-        name: 'The average of Jack',
+        name: 'Jack',
         data: this.data.averageScore.jackScore
       }, {
-        name: 'The average of Rose',
+        name: 'Rose',
         data: this.data.averageScore.roseScore
       }, {
         name: 'Class average',
@@ -109,14 +109,14 @@ Page({
       animation: true,
       categories: this.data.averageScore.timeCategories,
       series: [{
-        name: '2018/10/25 Quiz--Elements of Alge-bra',
+        name: '2018/10/25 Quiz--Algebra',
         data: this.data.averageScore.averageScoresOfMath,
       }],
       xAxis: {
         disableGrid: true
       },
       yAxis: {
-        title: 'The count of anwsered questions',
+        title: 'Responses',
         min: 50
       },
       extra: {

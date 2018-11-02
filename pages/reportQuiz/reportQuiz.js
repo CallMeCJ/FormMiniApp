@@ -22,7 +22,7 @@ Page({
       categories: ['10/15', '10/16', '10/17', '10/18', '10/19', '10/20', '10/21', '10/22', '10/23', '10/24', '10/25', '10/26','10/27','10/28']
     },
     //标签云
-    labArr: ['Hardworking education worker', 'Overtime working makes me happy', 'Forms fans', 'Paranoia'],
+    labArr: ['Hardworking educator', 'Overtime frenzy', 'Fan of Forms', 'Dedicated'],
   },
   onLoad: function (e) {
     if (app.globalData.userInfo) {
@@ -103,7 +103,7 @@ Page({
         data: this.data.dailyActiveForm.categoriesDatas,
       }],
       yAxis: {
-        title: 'total',
+        title: 'Total',
         min: 0
       },
       xAxis: {

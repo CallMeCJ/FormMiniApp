@@ -29,7 +29,7 @@ Page({
       categories: ['08:00', '', '', '11:00', '', '', '14:00', '', '', '17:00', '', '', '20:00', '', '', '23:00', '', '', '02:00', '', '', '05:00', '', '07:00']
     },
     //标签云
-    labArr: ['Employee of the Year', 'Popular', 'Midnight King', 'All-Around Player'],
+    labArr: ['Employee of the Year', 'Popular', 'Night Owl', 'All-Around Player'],
   },
   onLoad: function (e) {
     wx.showShareMenu({

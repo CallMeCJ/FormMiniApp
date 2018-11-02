@@ -8,7 +8,7 @@
     </block>
   </view>
   <view class='userinfo-tag'>
-    <view class='userinfo-keyword'>Tag</view>
+    <view class='userinfo-keyword'>KEYWORDS</view>
       <block wx:for="{{labArr}}" wx:key="key" wx:for-index="key" wx:for-item="v" class="" style="display:flex;flex-direction: row;">
           <view class='lab' data-key="{{key}}" style="background-color:#008272">{{v}}</view>
       </block>
@@ -33,10 +33,10 @@
       <view class='reward'>Defeated 73% of the users worldwide</view>
     </view>
     <canvas canvas-id="radarCanvas" class="canvas distribution" style="height:300px"></canvas>
-    <view class='suggest-text'>—— you are preferred text and choice question types，'Paranoia' suits you</view>
+    <view class='suggest-text'>-- You prefer text and choice question types</view>
     <view class='split-block'/>
     <canvas canvas-id="columnCanvas" class="canvas activeForm" style="height:200px"></canvas>
-    <view class='suggest-text'>—— You are still working on weekend，it is you that 'Overtime working makes me happy'</view>
+    <view class='suggest-text'>-- Seems that work overtime makes you super happy</view>
     <view class='split-block bottom-line'>---END---</view>
   </view>
 </view>
