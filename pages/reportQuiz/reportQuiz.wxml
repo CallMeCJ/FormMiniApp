@@ -40,3 +40,5 @@
     <view class='split-block bottom-line'>---END---</view>
   </view>
 </view>
+
+<tabbar tabbar="{{tabbar}}"></tabbar>

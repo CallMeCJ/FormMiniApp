@@ -71,7 +71,7 @@ Page({
 
   login: function () {
     wx.redirectTo({
-      url: '../loading/loading',
+      url: '../loading/loading?email='+this.data.email,
     });
   }
 })

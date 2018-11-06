@@ -1,5 +1,5 @@
 <!--index.wxml-->
-<view class="container">
+<view class="container1">
   <view class='userinfo-container'>
   <view class="userinfo">
     <block>
@@ -39,5 +39,5 @@
     <view class='suggest-text'>—— You always work until midnight! "Night Owl" awarded</view>
     <view class='split-block bottom-line'>---END---</view>
   </view>
+  <tabbar tabbar="{{tabbar}}"></tabbar>
 </view>
-<tabbar tabbar="{{tabbar}}"></tabbar>

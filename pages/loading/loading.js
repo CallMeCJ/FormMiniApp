@@ -12,9 +12,13 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    var url = '../reportSurvey/reportSurvey';
+    if(options.email === 'Juliet@microsoft.com'){
+      url = '../reportQuiz/reportQuiz';
+    }
     setTimeout(function() {
       wx.redirectTo({
-        url: '../reportSurvey/reportSurvey',
+        url: url,
       });
     }, 2000);
   },

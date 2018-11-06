@@ -54,6 +54,7 @@ Page({
 
     this.onLoadQuestionType(e);
     this.onLoadDAF(e);
+    app.editTabbar2();
   },
 
   onLoadQuestionType: function(e){

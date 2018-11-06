@@ -22,6 +22,7 @@ Page({
     this.onLoadClassQuiz(e);
     this.onLoadMathModulsScore(e);
     this.onLoadJackAndRoseRanking(e);
+    app.editTabbar2();
   },
 
   onLoadMathModulsScore(e){

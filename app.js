@@ -49,6 +49,20 @@ App({
       tabbar: tabbar
     });
   },
+  editTabbar2: function () {
+    let tabbar = this.globalData.tabBar2;
+    let currentPages = getCurrentPages();
+    let _this = currentPages[currentPages.length - 1];
+    let pagePath = _this.route;
+    (pagePath.indexOf('/') != 0) && (pagePath = '/' + pagePath);
+    for (let i in tabbar.list) {
+      tabbar.list[i].selected = false;
+      (tabbar.list[i].pagePath == pagePath) && (tabbar.list[i].selected = true);
+    }
+    _this.setData({
+      tabbar: tabbar
+    });
+  },
   globalData: {
     systemInfo: null,//客户端设备信息
     userInfo: null,
@@ -71,6 +85,26 @@ App({
           "selectedIconPath": "icon/ideas_HL.png"
         }
       ]
-    } 
+    },
+    tabBar2: {
+      "color": "#9E9E9E",
+      "backgroundColor": "#fff",
+      "borderStyle": "#ccc",
+      "selectedColor": "#008272",
+      "list": [
+        {
+          "pagePath": "/pages/reportQuiz/reportQuiz",
+          "text": "Report",
+          "iconPath": "icon/report.png",
+          "selectedIconPath": "icon/report_HL.png"
+        },
+        {
+          "pagePath": "/pages/quiz/quiz",
+          "text": "Ideas",
+          "iconPath": "icon/ideas.png",
+          "selectedIconPath": "icon/ideas_HL.png"
+        }
+      ]
+    }
   }
 })

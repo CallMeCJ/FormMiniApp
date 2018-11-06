@@ -7,3 +7,5 @@
     <view class='suggest-text'>-- The average score of <text style="color:#008272">Rose</text> and <text style="color:#008272">Jack</text> are similar</view>
     <view class='split-block bottom-line'>---END---</view>
 </view>
+
+<tabbar tabbar="{{tabbar}}"></tabbar>
