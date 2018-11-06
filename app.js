@@ -1,6 +1,8 @@
 //app.js
 App({
   onLaunch: function () {
+    wx.hideTabBar();
+    
     // 展示本地存储能力.
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -33,9 +35,42 @@ App({
       }
     })
   },
+  editTabbar: function () {
+    let tabbar = this.globalData.tabBar;
+    let currentPages = getCurrentPages();
+    let _this = currentPages[currentPages.length - 1];
+    let pagePath = _this.route;
+    (pagePath.indexOf('/') != 0) && (pagePath = '/' + pagePath);
+    for (let i in tabbar.list) {
+      tabbar.list[i].selected = false;
+      (tabbar.list[i].pagePath == pagePath) && (tabbar.list[i].selected = true);
+    }
+    _this.setData({
+      tabbar: tabbar
+    });
+  },
   globalData: {
+    systemInfo: null,//客户端设备信息
     userInfo: null,
-    serverPath: 'https://forms.office-int.com',
-    token: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Im45SF9ZSkRDbTd5SmJsRDBoQ0NVM3A3bXBqQSIsImtpZCI6Im45SF9ZSkRDbTd5SmJsRDBoQ0NVM3A3bXBqQSJ9.eyJhdWQiOiJjOWE1NTlkMi03YWFiLTRmMTMtYTZlZC1lN2U5YzUyYWVjODciLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLXBwZS5uZXQvZjY4NmQ0MjYtOGQxNi00MmRiLTgxYjctYWI1NzhlMTEwY2NkLyIsImlhdCI6MTU0MDg4NzE5NCwibmJmIjoxNTQwODg3MTk0LCJleHAiOjE1NDA4OTEwOTQsImFpbyI6IkFWUUFxLzhNQUFBQW13dFh0a09FeUsvSlE0YVErNGRQbDJuYW1ZSGhrMVc4eWdQWHpIZmd4T1BxUjhxMnRDbG9pUmlmZldhWWNvR2tDTG84RTFOdFVwWVEvMHN3MXJmWjllYWJTQ0d0SUhXSlJ2OE5IOEZTNmVzPSIsImFtciI6WyJ3aWEiLCJtZmEiXSwiY19oYXNoIjoiNi01VVFib0ZlZEkyVlQtYkFGOEdRdyIsImZhbWlseV9uYW1lIjoiWmhlbmciLCJnaXZlbl9uYW1lIjoiQ2hhb0ppZSIsImluX2NvcnAiOiJ0cnVlIiwiaXBhZGRyIjoiMTY3LjIyMC4yMzIuODIiLCJuYW1lIjoiQ2hhb0ppZSBaaGVuZyIsIm5vbmNlIjoiOTY1NzAxZjItZDdjMS00Yjg0LTljNGItZmVhMGJlYThhNDM0LjYzNjc2NDY0MDU5MzA2MzY5OCIsIm9pZCI6IjczZDQ5NTFlLWE2MGQtNDIyYi04OGUxLWJhMTYzZjk2N2U5MyIsIm9ucHJlbV9zaWQiOiJTLTEtNS0yMS0yMTQ2NzczMDg1LTkwMzM2MzI4NS03MTkzNDQ3MDctMjM0MzA5NCIsInB1aWQiOiIxMDAzQkZGREE5NUZDQ0RBIiwic3ViIjoiQWhqVTBSd0phbXZIRksxU1lzUllSR1Jod1VWZnNJSDlQQ095RFNKWDBWYyIsInRpZCI6ImY2ODZkNDI2LThkMTYtNDJkYi04MWI3LWFiNTc4ZTExMGNjZCIsInVuaXF1ZV9uYW1lIjoiY2h6aGVAbWljcm9zb2Z0LmNvbSIsInVwbiI6ImNoemhlQG1pY3Jvc29mdC5jb20iLCJ1dGkiOiJSU2pMLWtaSEdraWR4TGhjUDBRYUFBIiwidmVyIjoiMS4wIn0.GKM2gwxhMnLObyeQ9h_yzVZnYIs1qjxg8Vk025FQhlPe62zHgW7HuFTY5AhliGzULRCN657-RYnmXj2EARW4Y7AUhZx1vplZd_8NzSDzlZlnpVcQlRzk3LjK2tOAxO_c24UzWyfmKY7Pz07z_6YDff2rjxX27BxcITFpSRDA1_9nCtBePnLdMXrpKQcaThDMf671OAbNrhyH8zkf3HagajKXtpVbLaFNPyQgkCY2w212SCsEJ3Yqhwn3jAxePk7q82i_q-T3wb3ciVKVxe4nbPdoZAbGuu6Rr0u-vzjJclfi1-ZsdKBQIsDPjPsujywGfwGcV9MAtwyqz1AWzCqyrg'
+    tabBar: {
+      "color": "#9E9E9E",
+      "backgroundColor": "#fff",
+      "borderStyle": "#ccc",
+      "selectedColor": "#008272",
+      "list": [
+        {
+          "pagePath": "/pages/reportSurvey/reportSurvey",
+          "text": "Report",
+          "iconPath": "icon/report.png",
+          "selectedIconPath": "icon/report_HL.png"
+        },
+        {
+          "pagePath": "/pages/survey/survey",
+          "text": "Ideas",
+          "iconPath": "icon/ideas.png",
+          "selectedIconPath": "icon/ideas_HL.png"
+        }
+      ]
+    } 
   }
 })

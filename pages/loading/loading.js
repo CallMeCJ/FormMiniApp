@@ -13,7 +13,7 @@ Page({
    */
   onLoad: function (options) {
     setTimeout(function() {
-      wx.switchTab({
+      wx.redirectTo({
         url: '../reportSurvey/reportSurvey',
       });
     }, 2000);

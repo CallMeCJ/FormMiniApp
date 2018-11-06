@@ -9,3 +9,5 @@
     <view class='split-block bottom-line'>---END---</view>
 </view>
 
+<tabbar tabbar="{{tabbar}}"></tabbar>
+

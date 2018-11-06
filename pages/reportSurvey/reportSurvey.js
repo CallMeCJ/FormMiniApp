@@ -9,6 +9,7 @@ var columnChart = null;
 
 Page({
   data: {
+    tabbar: {},
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
@@ -37,6 +38,7 @@ Page({
     })
     this.onLoadQuestionType(e);
     this.onLoadMAF(e);
+    app.editTabbar();
   },
 
   onLoadQuestionType: function (e) {

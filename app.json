@@ -13,22 +13,5 @@
     "navigationBarBackgroundColor": "#008272",
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "Forms Assistant"
-  },
-  "tabBar": {
-    "selectedColor": "#008272",
-    "list": [
-      {
-        "pagePath": "pages/reportSurvey/reportSurvey",
-        "text": "Report",
-        "iconPath": "images/report.png",
-        "selectedIconPath": "images/report_HL.png"
-      },
-      {
-        "pagePath": "pages/survey/survey",
-        "text": "Ideas",
-        "iconPath": "images/ideas.png",
-        "selectedIconPath": "images/ideas_HL.png"
-      }
-    ]
   }
 }

@@ -3,6 +3,7 @@ const util = require('../../utils/util.js')
 const wxCharts = require('../../utils/wxcharts.js');
 var lineChart = null;
 var areaChart = null;
+const app = getApp();
 
 Page({
   data: {
@@ -25,6 +26,7 @@ Page({
     this.onLoadFinishedRate(e);
     this.onLoadRespond(e);
     this.onLoadDrop(e);
+    app.editTabbar();
   },
 
   onLoadFinishedRate: function (e) {
