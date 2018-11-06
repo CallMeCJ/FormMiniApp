@@ -1,0 +1,20 @@
+<!--logs.wxml-->
+<view wx:if="{{isSurvey}}" class="container">
+    <canvas canvas-id="finishRateCanvas" class="canvas finishRate"></canvas>
+    <view class='suggest-text drop'>-- Those surveys with less than 30% response rate are mainly consisted with "Text" questions.</view>
+    <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas responseTime"></canvas>
+    <view class='suggest-text drop'>-- It would be better to distribute a survey for higher responsiveness on every Wednesday afternoon.</view>    
+    <canvas canvas-id="areaCanvas" class="canvas responseCount"></canvas>
+    <view class='suggest-text drop'>-- In form <text style="color:#008272">Family Day Activity Feedback</text>,most people left when answering Q4 ("Text" question):<text style="color:#008272">Are you satisfied with this event?</text>. Forms Assistant feels that the Rating question is more suitable than the text question.</view>
+    <view class='split-block bottom-line'>---END---</view>
+</view>
+
+<view wx:else class="container">
+    <canvas canvas-id="averageScoreCanvas" class="canvas average"></canvas>
+    <view class='suggest-text'>-- Most students didn't answer <text style="color:#008272">Q9</text> and <text style="color:#008272">Q10</text></view>
+    <canvas canvas-id="mathModulsRadar" class="canvas mathModule" style="height:300px"></canvas>
+    <view class='suggest-text'>-- <text style="color:#008272">Math application</text> and <text style="color:#008272">Geometry</text> still have room to improvement</view>
+    <canvas canvas-id="rankingCanvas" class="canvas jackandrose"></canvas>
+    <view class='suggest-text'>-- The average score of <text style="color:#008272">Rose</text> and <text style="color:#008272">Jack</text> are similar</view>
+    <view class='split-block bottom-line'>---END---</view>
+</view>

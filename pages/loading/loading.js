@@ -1,4 +1,6 @@
 // pages/loading/loading.js
+const app = getApp()
+
 Page({
 
   /**
@@ -12,9 +14,17 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    if (options.email == 'Juliet@microsoft.com'){
+      app.globalData.isQuiz=true;
+      app.globalData.isSurvey = false;
+    }else{
+      app.globalData.isSurvey=true;
+      app.globalData.isQuiz = false;
+    }
+    
     setTimeout(function() {
       wx.switchTab({
-        url: '../reportSurvey/reportSurvey',
+        url: '../report/report',
       });
     }, 2000);
   },

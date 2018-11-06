@@ -1,5 +1,0 @@
-<view class="container">
-    <canvas canvas-id="ringCanvas" class="canvas" bindtouchstart="touchHandler"></canvas>
-    <view class='quata-title'>User quota</view>
-    <!--<button type="primary" bindtap="updateData" style="margin-top:30rpx">更新title</button>-->
-</view>

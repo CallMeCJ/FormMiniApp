@@ -1,0 +1,83 @@
+<view wx:if="{{isSurvey}}" class="container">
+  <view class='userinfo-container'>
+  <view class="userinfo">
+    <block>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="../../images/survey_icon.png" mode="cover"></image>
+      <text class="userinfo-nickname">Romeo</text>
+    </block>
+  </view>
+  <view class='userinfo-tag'>
+    <view class='userinfo-keyword'>KEYWORDS</view>
+      <block wx:for="{{survey.labArr}}" wx:key="key" wx:for-index="key" wx:for-item="v" class="" style="display:flex;flex-direction: row;">
+          <view class='lab' data-key="{{key}}" style="background-color:#008272">{{v}}</view>
+      </block>
+  </view>
+  </view>
+  <view class="container">
+    <view class='text-container-form-quiz'>
+      <view class='text-content-form'>
+        <view class='count'>241</view>
+        <view class='type'>Form</view>
+      </view>    
+      <view class='text-content-quiz'>
+        <view class='count'>10</view>
+        <view class='type'>Quiz</view>
+      </view>
+    </view>
+    <view class='text-content-response'>
+      <view class='count'>52636</view>
+      <view class='type'>Responses</view>
+    </view>
+    <view class='text-content-reward'>
+      <view class='reward'>You beat 83% of the world's users</view>
+    </view>
+    <canvas canvas-id="radarCanvas" class="canvas distribution" style="height:300px"></canvas>
+    <view class='suggest-text'>—— All types are used, you are the "All-Around Player"</view>
+    <view class='split-block'/>
+    <canvas canvas-id="columnCanvas" class="canvas activeForm" style="height:200px"></canvas>
+    <view class='suggest-text'>—— You always work until midnight! "Night Owl" awarded</view>
+    <view class='split-block bottom-line'>---END---</view>
+  </view>
+</view>
+
+<view wx:else class="container">
+  <view class='userinfo-container'>
+  <view class="userinfo">
+    <block>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="../../images/quiz_icon.png" mode="cover"></image>
+      <text class="userinfo-nickname">Juliet</text>
+    </block>
+  </view>
+  <view class='userinfo-tag'>
+    <view class='userinfo-keyword'>KEYWORDS</view>
+      <block wx:for="{{quiz.labArr}}" wx:key="key" wx:for-index="key" wx:for-item="v" class="" style="display:flex;flex-direction: row;">
+          <view class='lab' data-key="{{key}}" style="background-color:#008272">{{v}}</view>
+      </block>
+  </view>
+  </view>
+  <view class="container">
+    <view class='text-container-form-quiz'>
+      <view class='text-content-form'>
+        <view class='count'>8</view>
+        <view class='type'>Survey</view>
+      </view>    
+      <view class='text-content-quiz'>
+        <view class='count'>215</view>
+        <view class='type'>Quiz</view>
+      </view>
+    </view>
+    <view class='text-content-response'>
+      <view class='count'>4989</view>
+      <view class='type'>Responses</view>
+    </view>
+    <view class='text-content-reward'>
+      <view class='reward'>Defeated 73% of the users worldwide</view>
+    </view>
+    <canvas canvas-id="radarCanvas" class="canvas distribution" style="height:300px"></canvas>
+    <view class='suggest-text'>-- You prefer text and choice question types</view>
+    <view class='split-block'/>
+    <canvas canvas-id="columnCanvas" class="canvas activeForm" style="height:200px"></canvas>
+    <view class='suggest-text'>-- Seems that work overtime makes you super happy</view>
+    <view class='split-block bottom-line'>---END---</view>
+  </view>
+</view>    
