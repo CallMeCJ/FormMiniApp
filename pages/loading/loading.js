@@ -14,7 +14,8 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    if (options.email == 'Juliet@microsoft.com'){
+    var email = options.email;
+    if(email.toLowerCase().startsWith("j")){  
       app.globalData.isQuiz=true;
       app.globalData.isSurvey = false;
     }else{
